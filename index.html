@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhayo Group</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0;
+            color: white;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .family-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 40px 20px;
+        }
+
+        .family-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .family-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .photo-container {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid #667eea;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .family-card h3 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .family-card .role {
+            color: #667eea;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        /* Profile Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 20px;
+            max-width: 800px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            transform: scale(0.8);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #667eea;
+            color: white;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+            z-index: 10;
+        }
+
+        .close-btn:hover {
+            background: #764ba2;
+        }
+
+        .profile-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 60px 30px 40px;
+            text-align: center;
+            color: white;
+        }
+
+        .profile-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            border: 5px solid white;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .profile-header .role {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .profile-body {
+            padding: 40px;
+        }
+
+        .info-section {
+            margin-bottom: 30px;
+        }
+
+        .info-section h3 {
+            color: #667eea;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-section h3::before {
+            content: '';
+            width: 4px;
+            height: 20px;
+            background: #667eea;
+            border-radius: 2px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .info-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .info-item label {
+            display: block;
+            color: #666;
+            font-size: 0.85rem;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .info-item span {
+            color: #333;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .bio-text {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        .hobbies-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .hobby-tag {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .family-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 20px;
+            }
+
+            .photo-container {
+                width: 140px;
+                height: 140px;
+            }
+
+            .profile-header {
+                padding: 40px 20px 30px;
+            }
+
+            .profile-header h2 {
+                font-size: 2rem;
+            }
+
+            .profile-photo {
+                width: 150px;
+                height: 150px;
+            }
+
+            .profile-body {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Team Bhayo</h1>
+            <p>Click on any member to learn more about them</p>
+        </header>
+
+        <div class="family-grid" id="familyGrid">
+            <!-- Family cards will be generated here -->
+        </div>
+    </div>
+
+    <!-- Profile Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal()">×</button>
+            <div class="profile-header" id="profileHeader">
+                <div class="profile-photo">
+                    <img src="" alt="" id="profileImage">
+                </div>
+                <h2 id="profileName"></h2>
+                <p class="role" id="profileRole"></p>
+            </div>
+            <div class="profile-body" id="profileBody">
+                <!-- Profile details will be generated here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ============================================
+        // 🎉 EASY CUSTOMIZATION - Add/Remove Fields!
+        // ============================================
+        // Just add or remove any field below. 
+        // The page will automatically show/hide it!
+        // Age field accepts: numbers, ranges ("20-25"), text ("30s", "Around 40")
+        // ============================================
+        
+        const familyMembers = [
+            {
+                id: 1,
+                name: "Majid",
+                role: "Saljook.Editiz",
+                image: "https://raw.githubusercontent.com/wized2/Bhayo/refs/heads/main/Majid.jpg",
+                age: "24",
+                birthday: "2002",
+                occupation: "Useless",
+                email: "km6483723@gmail.com",
+                phone: "+923073476034",
+                location: "Taj Garh, Rahim Yar Khan",
+                bio: "Majid is a boy who use phone all day and watch movies and TikTok, work on a hotel at night.",
+                hobbies: ["Cooking", "Browsing", "Scrolling"]
+            },
+            {
+                id: 2,
+                name: "Ajmal Bhayo",
+                role: "Khalifa Electric",
+                image: "https://raw.githubusercontent.com/wized2/Bhayo/refs/heads/main/Ajmal.jpg",
+                age: "20-25",
+                birthday: "N/A",
+                occupation: "Electric Engineer",
+                email: "N/A",
+                phone: "+92 341 3293399",
+                location: "Taj Garh, Rahim Yar Khan",
+                bio: "Ajmal is a disciplined young man who runs his own electrical shop. He is a master of electrical engineering.",
+                hobbies: ["Work", "Scrolling", "TikTok"]
+            },
+            {
+                id: 3,
+                name: "Mubeen Bhayo",
+                role: "😎😎😎",
+                image: "https://raw.githubusercontent.com/wized2/Bhayo/refs/heads/main/Mubeen.jpg",
+                age: "20-25",
+                birthday: "N/A",
+                occupation: "Work",
+                email: "N/A",
+                phone: "+92 309 7469561",
+                bio: "Mubeen is a strong boy, always busy in work, Majid's best friend",
+                hobbies: ["Work", "Gaming", "Music"]
+            },  
+            {
+                id: 4,
+                name: "Rashid Bhayo",
+                role: "Dark News",
+                image: "https://raw.githubusercontent.com/wized2/Bhayo/refs/heads/main/Rashid.jpg",
+                age: "18",
+                birthday: "N/A",
+                occupation: "Work",
+                email: "mr55368d@gmail.com",
+                phone: "+92 303 4774465",
+                bio: "Rashid is a good boy, he is a good PUBG gammer",
+                hobbies: ["Work",,"Gaming", "PUBG", "Music"]
+            }
+        ];
+
+        // Generate family grid
+        function generateFamilyGrid() {
+            const grid = document.getElementById('familyGrid');
+            grid.innerHTML = '';
+
+            familyMembers.forEach(member => {
+                const card = document.createElement('div');
+                card.className = 'family-card';
+                card.onclick = () => openModal(member);
+                
+                card.innerHTML = `
+                    <div class="photo-container">
+                        <img src="${member.image || 'https://via.placeholder.com/180?text=No+Photo'}" alt="${member.name}">
+                    </div>
+                    <h3>${member.name || 'Unknown'}</h3>
+                    <p class="role">${member.role || ''}</p>
+                `;
+                
+                grid.appendChild(card);
+            });
+        }
+
+        // Open modal with member details - AUTO HIDES empty fields!
+        function openModal(member) {
+            document.getElementById('profileImage').src = member.image || 'https://via.placeholder.com/200?text=No+Photo';
+            document.getElementById('profileImage').alt = member.name || 'Family Member';
+            document.getElementById('profileName').textContent = member.name || 'Unknown';
+            document.getElementById('profileRole').textContent = member.role || '';
+
+            // Build info grid only with fields that exist
+            let infoItems = '';
+            
+            if (member.age) {
+                infoItems += `
+                    <div class="info-item">
+                        <label>Age</label>
+                        <span>${member.age}</span>
+                    </div>
+                `;
+            }
+            
+            if (member.birthday) {
+                infoItems += `
+                    <div class="info-item">
+                        <label>Birthday</label>
+                        <span>${member.birthday}</span>
+                    </div>
+                `;
+            }
+            
+            if (member.occupation) {
+                infoItems += `
+                    <div class="info-item">
+                        <label>Occupation</label>
+                        <span>${member.occupation}</span>
+                    </div>
+                `;
+            }
+            
+            if (member.email) {
+                infoItems += `
+                    <div class="info-item">
+                        <label>Email</label>
+                        <span>${member.email}</span>
+                    </div>
+                `;
+            }
+            
+            if (member.phone) {
+                infoItems += `
+                    <div class="info-item">
+                        <label>Phone</label>
+                        <span>${member.phone}</span>
+                    </div>
+                `;
+            }
+            
+            if (member.location) {
+                infoItems += `
+                    <div class="info-item">
+                        <label>Location</label>
+                        <span>${member.location}</span>
+                    </div>
+                `;
+            }
+
+            // Build personal info section (only if there are fields)
+            const personalInfoSection = infoItems ? `
+                <div class="info-section">
+                    <h3>Personal Information</h3>
+                    <div class="info-grid">
+                        ${infoItems}
+                    </div>
+                </div>
+            ` : '';
+
+            // Build bio section (only if bio exists)
+            const bioSection = member.bio ? `
+                <div class="info-section">
+                    <h3>About</h3>
+                    <p class="bio-text">${member.bio}</p>
+                </div>
+            ` : '';
+
+            // Build hobbies section (only if hobbies exist)
+            const hobbiesSection = member.hobbies && member.hobbies.length > 0 ? `
+                <div class="info-section">
+                    <h3>Hobbies & Interests</h3>
+                    <div class="hobbies-list">
+                        ${member.hobbies.map(hobby => `<span class="hobby-tag">${hobby}</span>`).join('')}
+                    </div>
+                </div>
+            ` : '';
+
+            // Combine all sections
+            const profileBody = document.getElementById('profileBody');
+            profileBody.innerHTML = `
+                ${personalInfoSection}
+                ${bioSection}
+                ${hobbiesSection}
+            `;
+
+            document.getElementById('modalOverlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close modal
+        function closeModal() {
+            document.getElementById('modalOverlay').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('modalOverlay').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('modalOverlay')) {
+                closeModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Initialize
+        generateFamilyGrid();
+    </script>
+</body>
+</html>
