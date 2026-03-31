@@ -15,8 +15,15 @@
             padding: 0;
             box-sizing: border-box;
             -webkit-tap-highlight-color: transparent;
+            user-select: none; /* Make text non-selectable globally */
         }
 
+        /* Allow text selection only in input fields */
+        input, textarea {
+            user-select: text;
+        }
+
+        /* Light theme (default) */
         :root {
             --md-sys-color-primary: #8B5CF6;
             --md-sys-color-on-primary: #FFFFFF;
@@ -26,22 +33,64 @@
             --md-sys-color-tertiary: #EC489A;
             --md-sys-color-surface: #FFFFFF;
             --md-sys-color-surface-dim: #F8FAFC;
+            --md-sys-color-surface-bright: #FFFFFF;
             --md-sys-color-surface-container-lowest: #FFFFFF;
             --md-sys-color-surface-container-low: #F9FAFB;
             --md-sys-color-surface-container: #F3F4F6;
             --md-sys-color-surface-container-high: #F1F5F9;
+            --md-sys-color-surface-container-highest: #FFFFFF;
             --md-sys-color-on-surface: #0F172A;
             --md-sys-color-on-surface-variant: #475569;
             --md-sys-color-outline: #E2E8F0;
             --md-sys-color-outline-variant: #F1F5F9;
-            
-            --motion-easing-emphasized: cubic-bezier(0.2, 0.9, 0.4, 1.1);
-            --motion-easing-decelerate: cubic-bezier(0.05, 0.7, 0.1, 1);
-            --motion-duration-medium: 400ms;
-            --motion-duration-long: 500ms;
-            
-            --md-shape-large: 28px;
-            --md-shape-full: 999px;
+            --md-sys-color-shadow: rgba(0,0,0,0.1);
+        }
+
+        /* Dark theme */
+        [data-theme="dark"] {
+            --md-sys-color-primary: #A78BFA;
+            --md-sys-color-on-primary: #1E1A2F;
+            --md-sys-color-primary-container: #2D2A4A;
+            --md-sys-color-on-primary-container: #E9DDFF;
+            --md-sys-color-secondary: #C084FC;
+            --md-sys-color-tertiary: #F472B6;
+            --md-sys-color-surface: #0F0F1A;
+            --md-sys-color-surface-dim: #0A0A12;
+            --md-sys-color-surface-bright: #1A1A2A;
+            --md-sys-color-surface-container-lowest: #08080F;
+            --md-sys-color-surface-container-low: #12121F;
+            --md-sys-color-surface-container: #1A1A2A;
+            --md-sys-color-surface-container-high: #222232;
+            --md-sys-color-surface-container-highest: #2A2A3A;
+            --md-sys-color-on-surface: #F1F5F9;
+            --md-sys-color-on-surface-variant: #CBD5E1;
+            --md-sys-color-outline: #2D2D3A;
+            --md-sys-color-outline-variant: #222232;
+            --md-sys-color-shadow: rgba(0,0,0,0.3);
+        }
+
+        /* System preference detection */
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]) {
+                --md-sys-color-primary: #A78BFA;
+                --md-sys-color-on-primary: #1E1A2F;
+                --md-sys-color-primary-container: #2D2A4A;
+                --md-sys-color-on-primary-container: #E9DDFF;
+                --md-sys-color-secondary: #C084FC;
+                --md-sys-color-tertiary: #F472B6;
+                --md-sys-color-surface: #0F0F1A;
+                --md-sys-color-surface-dim: #0A0A12;
+                --md-sys-color-surface-bright: #1A1A2A;
+                --md-sys-color-surface-container-lowest: #08080F;
+                --md-sys-color-surface-container-low: #12121F;
+                --md-sys-color-surface-container: #1A1A2A;
+                --md-sys-color-surface-container-high: #222232;
+                --md-sys-color-surface-container-highest: #2A2A3A;
+                --md-sys-color-on-surface: #F1F5F9;
+                --md-sys-color-on-surface-variant: #CBD5E1;
+                --md-sys-color-outline: #2D2D3A;
+                --md-sys-color-outline-variant: #222232;
+            }
         }
 
         body {
@@ -50,6 +99,7 @@
             min-height: 100vh;
             color: var(--md-sys-color-on-surface);
             overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.2s ease;
         }
 
         /* Ambient background */
@@ -63,6 +113,12 @@
             pointer-events: none;
             background: radial-gradient(ellipse at 20% 30%, rgba(139,92,246,0.08) 0%, transparent 50%),
                         radial-gradient(ellipse at 85% 70%, rgba(236,72,153,0.08) 0%, transparent 50%);
+            transition: opacity 0.3s ease;
+        }
+
+        [data-theme="dark"] .ambient-bg {
+            background: radial-gradient(ellipse at 20% 30%, rgba(167,139,250,0.12) 0%, transparent 50%),
+                        radial-gradient(ellipse at 85% 70%, rgba(244,114,182,0.12) 0%, transparent 50%);
         }
 
         .dynamic-blur {
@@ -76,6 +132,11 @@
             z-index: 0;
             pointer-events: none;
             animation: slowDrift 28s infinite alternate ease-in-out;
+            transition: opacity 0.3s ease;
+        }
+
+        [data-theme="dark"] .dynamic-blur {
+            background: radial-gradient(circle at 40% 40%, rgba(167,139,250,0.18) 0%, rgba(244,114,182,0.12) 50%, transparent 80%);
         }
 
         @keyframes slowDrift {
@@ -83,7 +144,6 @@
             100% { transform: translate(3%, 4%) scale(1.08); opacity: 0.9; }
         }
 
-        /* App Container */
         .app-container {
             position: relative;
             z-index: 2;
@@ -92,17 +152,18 @@
             flex-direction: column;
         }
 
-        /* Home View */
-        .home-view {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
+        /* Header with search and theme */
+        .hero-section {
+            padding: 48px 24px 24px;
+            background: transparent;
         }
 
-        .hero-section {
-            padding: 56px 24px 32px;
-            background: transparent;
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            gap: 12px;
         }
 
         .header-chip {
@@ -112,12 +173,118 @@
             background: rgba(139, 92, 246, 0.12);
             backdrop-filter: blur(12px);
             padding: 6px 18px;
-            border-radius: var(--md-shape-full);
-            margin-bottom: 24px;
+            border-radius: 999px;
             font-size: 0.85rem;
             font-weight: 600;
             color: var(--md-sys-color-primary);
             border: 0.5px solid rgba(139,92,246,0.2);
+        }
+
+        /* Action Buttons Container */
+        .action-buttons {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        /* Search Button - matches theme button style */
+        .search-button, .theme-toggle {
+            width: 44px;
+            height: 44px;
+            border-radius: 30px;
+            background: var(--md-sys-color-surface-container);
+            border: 1px solid var(--md-sys-color-outline);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            color: var(--md-sys-color-on-surface-variant);
+            flex-shrink: 0;
+        }
+
+        .search-button:hover, .theme-toggle:hover {
+            background: var(--md-sys-color-primary);
+            color: white;
+            transform: scale(1.02);
+        }
+
+        /* Expanded Search Bar - becomes rounded bar */
+        .expanded-search-container {
+            margin: 20px 0 8px;
+            display: none;
+            animation: slideDown 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+
+        .expanded-search-container.active {
+            display: block;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .search-bar {
+            background: var(--md-sys-color-surface-container);
+            border-radius: 60px;
+            border: 1px solid var(--md-sys-color-outline);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 8px 20px;
+            transition: all 0.2s ease;
+        }
+
+        .search-bar:focus-within {
+            border-color: var(--md-sys-color-primary);
+            box-shadow: 0 0 0 2px rgba(139,92,246,0.2);
+        }
+
+        .search-bar .material-symbols-rounded {
+            color: var(--md-sys-color-on-surface-variant);
+            font-size: 1.3rem;
+        }
+
+        .search-input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            font-size: 1rem;
+            font-family: inherit;
+            color: var(--md-sys-color-on-surface);
+            outline: none;
+            padding: 10px 0;
+            user-select: text;
+        }
+
+        .search-input::placeholder {
+            color: var(--md-sys-color-on-surface-variant);
+            opacity: 0.6;
+        }
+
+        .close-search {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--md-sys-color-on-surface-variant);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 20px;
+            transition: all 0.2s;
+        }
+
+        .close-search:hover {
+            background: var(--md-sys-color-surface-container-high);
         }
 
         h1 {
@@ -139,7 +306,15 @@
             max-width: 500px;
         }
 
-        /* Members List - Edge to Edge */
+        /* Results count */
+        .results-count {
+            padding: 8px 24px;
+            font-size: 0.85rem;
+            color: var(--md-sys-color-on-surface-variant);
+            font-weight: 500;
+        }
+
+        /* Members List */
         .members-list {
             flex: 1;
             display: flex;
@@ -156,7 +331,7 @@
             background: var(--md-sys-color-surface-container-lowest);
             border-bottom: 1px solid var(--md-sys-color-outline);
             cursor: pointer;
-            transition: all var(--motion-duration-medium) var(--motion-easing-decelerate);
+            transition: all 0.3s cubic-bezier(0.05, 0.7, 0.1, 1);
             position: relative;
         }
 
@@ -179,8 +354,7 @@
             overflow: hidden;
             background: linear-gradient(135deg, var(--md-sys-color-primary-container), #F3E8FF);
             flex-shrink: 0;
-            transition: all 0.3s var(--motion-easing-emphasized);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
         }
 
         .member-row:hover .member-avatar {
@@ -236,6 +410,13 @@
             opacity: 0.6;
         }
 
+        .no-results {
+            text-align: center;
+            padding: 60px 24px;
+            color: var(--md-sys-color-on-surface-variant);
+            font-weight: 500;
+        }
+
         /* Footer */
         .app-footer {
             padding: 24px 24px 32px;
@@ -256,12 +437,7 @@
             flex-wrap: wrap;
         }
 
-        .footer-text .material-symbols-rounded {
-            font-size: 1rem;
-            color: var(--md-sys-color-primary);
-        }
-
-        /* ===== FULL EDGE-TO-EDGE PROFILE VIEW (Not a card, full screen) ===== */
+        /* Profile View - No 3D effect on bio */
         .profile-view {
             position: fixed;
             top: 0;
@@ -271,18 +447,16 @@
             background: var(--md-sys-color-surface-dim);
             z-index: 1000;
             transform: translateX(100%);
-            transition: transform 0.45s var(--motion-easing-emphasized);
+            transition: transform 0.45s cubic-bezier(0.2, 0.9, 0.4, 1.1);
             display: flex;
             flex-direction: column;
             overflow-y: auto;
-            overflow-x: hidden;
         }
 
         .profile-view.active {
             transform: translateX(0);
         }
 
-        /* Edge-to-Edge Profile Header with Back Button */
         .profile-header-edge {
             position: sticky;
             top: 0;
@@ -313,21 +487,8 @@
         .back-button:hover {
             background: var(--md-sys-color-primary);
             color: white;
-            transform: scale(1.02);
         }
 
-        .back-button .material-symbols-rounded {
-            font-size: 1.8rem;
-        }
-
-        .profile-header-edge h2 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--md-sys-color-on-surface);
-            flex: 1;
-        }
-
-        /* Profile Hero - Edge to Edge */
         .profile-hero {
             padding: 32px 24px;
             display: flex;
@@ -343,9 +504,7 @@
             border-radius: 70px;
             overflow: hidden;
             border: 4px solid var(--md-sys-color-primary);
-            box-shadow: 0 12px 30px rgba(139,92,246,0.25);
             margin-bottom: 20px;
-            background: var(--md-sys-color-primary-container);
         }
 
         .profile-hero-avatar img {
@@ -357,31 +516,15 @@
         .profile-hero h3 {
             font-size: 2rem;
             font-weight: 800;
-            color: var(--md-sys-color-on-surface);
             margin-bottom: 8px;
-        }
-
-        .profile-hero-role {
-            background: var(--md-sys-color-primary-container);
-            color: var(--md-sys-color-on-primary-container);
-            padding: 6px 20px;
-            border-radius: 40px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            display: inline-block;
-        }
-
-        /* Profile Content - Flowing Edge to Edge */
-        .profile-content {
-            padding: 24px 20px 40px;
-            flex: 1;
+            color: var(--md-sys-color-on-surface);
         }
 
         .info-grid-expressive {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 12px;
-            margin-bottom: 32px;
+            margin: 24px;
         }
 
         .info-tile {
@@ -392,15 +535,14 @@
             align-items: center;
             gap: 14px;
             border: 1px solid var(--md-sys-color-outline-variant);
-            transition: all 0.2s;
         }
 
         .info-tile .material-symbols-rounded {
-            font-size: 1.8rem;
             color: var(--md-sys-color-primary);
+            font-size: 1.8rem;
         }
 
-        .info-tile-content {
+        .info-tile div:last-child {
             flex: 1;
         }
 
@@ -413,65 +555,39 @@
             margin-bottom: 4px;
         }
 
-        .info-tile-value {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--md-sys-color-on-surface);
-            word-break: break-word;
-        }
-
+        /* Bio box - NO 3D effect, just clean background */
         .bio-expanded-full {
             background: var(--md-sys-color-surface-container);
             padding: 24px;
-            border-radius: 28px;
-            margin-bottom: 32px;
+            border-radius: 24px;
+            margin: 0 24px 24px;
             line-height: 1.7;
             color: var(--md-sys-color-on-surface-variant);
             font-weight: 500;
-            border-left: 5px solid var(--md-sys-color-primary);
-        }
-
-        .section-header {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin: 28px 0 16px 0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--md-sys-color-primary);
         }
 
         .hobbies-container {
             display: flex;
             flex-wrap: wrap;
             gap: 12px;
+            margin: 0 24px 32px;
         }
 
         .hobby-badge {
-            background: linear-gradient(115deg, var(--md-sys-color-primary-container), #F9F5FF);
+            background: var(--md-sys-color-primary-container);
             padding: 10px 24px;
             border-radius: 40px;
-            font-size: 0.9rem;
             font-weight: 600;
             color: var(--md-sys-color-on-primary-container);
-            transition: all 0.2s;
-            border: 0.5px solid rgba(139,92,246,0.2);
         }
 
-        /* Animation for rows */
         @keyframes rowFadeIn {
-            from {
-                opacity: 0;
-                transform: translateX(-12px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+            from { opacity: 0; transform: translateX(-12px); }
+            to { opacity: 1; transform: translateX(0); }
         }
 
         .member-row {
-            animation: rowFadeIn 0.35s var(--motion-easing-decelerate) backwards;
+            animation: rowFadeIn 0.35s cubic-bezier(0.05, 0.7, 0.1, 1) backwards;
         }
         .member-row:nth-child(1) { animation-delay: 0.02s; }
         .member-row:nth-child(2) { animation-delay: 0.07s; }
@@ -479,47 +595,15 @@
         .member-row:nth-child(4) { animation-delay: 0.17s; }
         .member-row:nth-child(5) { animation-delay: 0.22s; }
 
-        /* Scrollbar */
-        .profile-view::-webkit-scrollbar {
-            width: 4px;
-        }
-        .profile-view::-webkit-scrollbar-track {
-            background: transparent;
-        }
-        .profile-view::-webkit-scrollbar-thumb {
-            background: var(--md-sys-color-primary);
-            border-radius: 10px;
-        }
-
         @media (max-width: 680px) {
-            .hero-section {
-                padding: 40px 20px 24px;
-            }
-            h1 {
-                font-size: 2.4rem;
-            }
-            .member-row {
-                padding: 16px 20px;
-                gap: 16px;
-            }
-            .member-avatar {
-                width: 60px;
-                height: 60px;
-                border-radius: 28px;
-            }
-            .member-name {
-                font-size: 1.25rem;
-            }
-            .profile-hero-avatar {
-                width: 110px;
-                height: 110px;
-            }
-            .profile-hero h3 {
-                font-size: 1.6rem;
-            }
-            .info-grid-expressive {
-                grid-template-columns: 1fr;
-            }
+            .hero-section { padding: 32px 20px 20px; }
+            h1 { font-size: 2.4rem; }
+            .member-row { padding: 16px 20px; gap: 16px; }
+            .member-avatar { width: 60px; height: 60px; border-radius: 28px; }
+            .member-name { font-size: 1.25rem; }
+            .profile-hero-avatar { width: 110px; height: 110px; }
+            .info-grid-expressive { margin: 20px; }
+            .bio-expanded-full { margin: 0 20px 20px; }
         }
     </style>
 </head>
@@ -528,22 +612,40 @@
     <div class="dynamic-blur"></div>
 
     <div class="app-container">
-        <!-- Home View -->
         <div id="homeView" class="home-view">
             <div class="hero-section">
-                <div class="header-chip">
-                    <span class="material-symbols-rounded">diversity_3</span>
-                    <span>THE CIRCLE · EST. 2025</span>
+                <div class="header-top">
+                    <div class="header-chip">
+                        <span class="material-symbols-rounded">diversity_3</span>
+                        <span>THE CIRCLE · EST. 2025</span>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="search-button" id="searchButton">
+                            <span class="material-symbols-rounded">search</span>
+                        </button>
+                        <button class="theme-toggle" id="themeToggle">
+                            <span class="material-symbols-rounded" id="themeIcon">light_mode</span>
+                        </button>
+                    </div>
                 </div>
                 <h1>Team Bhayo</h1>
-                <p class="subhead">Connected by spirit, driven by passion — tap any profile to explore the journey.</p>
+                <p class="subhead">Connected by spirit, driven by passion — tap any profile to explore.</p>
+                
+                <!-- Expanded Search Bar (hidden by default) -->
+                <div class="expanded-search-container" id="expandedSearch">
+                    <div class="search-bar">
+                        <span class="material-symbols-rounded">search</span>
+                        <input type="text" class="search-input" id="searchInput" placeholder="Search by name, role, or interest..." autocomplete="off">
+                        <button class="close-search" id="closeSearch">
+                            <span class="material-symbols-rounded">close</span>
+                        </button>
+                    </div>
+                </div>
             </div>
 
-            <div class="members-list" id="membersList">
-                <!-- Dynamic rows injected -->
-            </div>
+            <div class="results-count" id="resultsCount"></div>
+            <div class="members-list" id="membersList"></div>
 
-            <!-- Footer -->
             <footer class="app-footer">
                 <div class="footer-text">
                     <span class="material-symbols-rounded">favorite</span>
@@ -553,114 +655,71 @@
             </footer>
         </div>
 
-        <!-- Full Edge-to-Edge Profile View (No card, full screen with back arrow) -->
         <div id="profileView" class="profile-view">
             <div class="profile-header-edge">
                 <button class="back-button" id="backButton">
                     <span class="material-symbols-rounded">arrow_back</span>
                 </button>
                 <h2 id="profileHeaderTitle">Profile</h2>
-                <div style="width: 44px;"></div> <!-- spacer for alignment -->
+                <div style="width: 44px;"></div>
             </div>
-            <div id="profileDynamicContent">
-                <!-- Dynamic content loads here -->
-            </div>
+            <div id="profileDynamicContent"></div>
         </div>
     </div>
 
     <script>
-        // Family Data - Full dataset
         const familyMembers = [
-            {
-                id: 1,
-                name: "Majid",
-                role: "Saljook.Editiz",
-                image: "https://raw.githubusercontent.com/wized2/Bhayo/refs/heads/main/Majid.jpg",
-                age: "24",
-                birthday: "2002",
-                occupation: "Useless",
-                email: "km6483723@gmail.com",
-                phone: "+923073476034",
-                location: "Taj Garh, Rahim Yar Khan",
-                bio: "Majid is a boy who use phone all day and watch movies and TikTok, work on a hotel at night.",
-                hobbies: ["Cooking", "Browsing", "Scrolling"]
-            },
-            {
-                id: 2,
-                name: "Ajmal Bhayo",
-                role: "Khalifa Electric",
-                image: "https://raw.githubusercontent.com/wized2/Bhayo/refs/heads/main/Ajmal.jpg",
-                age: "20-25",
-                birthday: "N/A",
-                occupation: "Electric Engineer",
-                email: "N/A",
-                phone: "+92 341 3293399",
-                location: "Taj Garh, Rahim Yar Khan",
-                bio: "Ajmal is a disciplined young man who runs his own electrical shop. He is a master of electrical engineering.",
-                hobbies: ["Work", "Scrolling", "TikTok"]
-            },
-            {
-                id: 3,
-                name: "Mubeen Bhayo",
-                role: "Strong Man",
-                image: "https://raw.githubusercontent.com/wized2/Bhayo/refs/heads/main/Mubeen.jpg",
-                age: "20-25",
-                birthday: "N/A",
-                occupation: "Work",
-                email: "N/A",
-                phone: "+92 309 7469561",
-                bio: "Mubeen is a strong boy, always busy in work, Majid's best friend",
-                hobbies: ["Work", "Gaming", "Music"]
-            },  
-            {
-                id: 4,
-                name: "Rashid Bhayo",
-                role: "Dark News",
-                image: "https://raw.githubusercontent.com/wized2/Bhayo/refs/heads/main/Rashid.jpg",
-                age: "18",
-                birthday: "N/A",
-                occupation: "Work",
-                email: "mr55368d@gmail.com",
-                phone: "+92 303 4774465",
-                bio: "Rashid is a good boy, he is a good PUBG gammer",
-                hobbies: ["Work", "Gaming", "PUBG", "Music"]
-            },
-            {
-                id: 5,
-                name: "Umar Bhayo",
-                role: "Gang",
-                image: "https://raw.githubusercontent.com/wized2/Bhayo/refs/heads/main/Umar.jpg",
-                age: "17-18",
-                birthday: "N/A",
-                occupation: "Work",
-                email: "N/A",
-                phone: "+92 321 4830928",
-                bio: "Umar is boy who works at motorcycle repair shop like visiting random places and watching movies",
-                hobbies: ["Work", "Gaming", "Music", "PUBG", "Tourist"]
-            }
+            { id: 1, name: "Majid", role: "Saljook.Editiz", image: "https://raw.githubusercontent.com/wized2/Bhayo/refs/heads/main/Majid.jpg", age: "24", birthday: "2002", occupation: "Useless", email: "km6483723@gmail.com", phone: "+923073476034", location: "Taj Garh, Rahim Yar Khan", bio: "Majid is a boy who use phone all day and watch movies and TikTok, work on a hotel at night.", hobbies: ["Cooking", "Browsing", "Scrolling"] },
+            { id: 2, name: "Ajmal Bhayo", role: "Khalifa Electric", image: "https://raw.githubusercontent.com/wized2/Bhayo/refs/heads/main/Ajmal.jpg", age: "20-25", birthday: "N/A", occupation: "Electric Engineer", email: "N/A", phone: "+92 341 3293399", location: "Taj Garh, Rahim Yar Khan", bio: "Ajmal is a disciplined young man who runs his own electrical shop. He is a master of electrical engineering.", hobbies: ["Work", "Scrolling", "TikTok"] },
+            { id: 3, name: "Mubeen Bhayo", role: "😎😎😎", image: "https://raw.githubusercontent.com/wized2/Bhayo/refs/heads/main/Mubeen.jpg", age: "20-25", birthday: "N/A", occupation: "Work", email: "N/A", phone: "+92 309 7469561", bio: "Mubeen is a strong boy, always busy in work, Majid's best friend", hobbies: ["Work", "Gaming", "Music"] },
+            { id: 4, name: "Rashid Bhayo", role: "Dark News", image: "https://raw.githubusercontent.com/wized2/Bhayo/refs/heads/main/Rashid.jpg", age: "18", birthday: "N/A", occupation: "Work", email: "mr55368d@gmail.com", phone: "+92 303 4774465", bio: "Rashid is a good boy, he is a good PUBG gammer", hobbies: ["Work", "Gaming", "PUBG", "Music"] },
+            { id: 5, name: "Umar Bhayo", role: "Gang", image: "https://raw.githubusercontent.com/wized2/Bhayo/refs/heads/main/Umar.jpg", age: "17-18", birthday: "N/A", occupation: "Work", email: "N/A", phone: "+92 321 4830928", bio: "Umar works at motorcycle repair shop, loves visiting places and watching movies", hobbies: ["Work", "Gaming", "Music", "PUBG", "Tourist"] }
         ];
 
-        // Generate member rows
-        function generateMemberRows() {
+        let currentSearchQuery = '';
+
+        // FIXED: Exact search filtering - "Majid" only shows Majid
+        function filterMembers() {
+            const query = currentSearchQuery.toLowerCase().trim();
+            if (!query) return familyMembers;
+            
+            return familyMembers.filter(member => {
+                // Check name (exact or partial)
+                const nameMatch = member.name.toLowerCase().includes(query);
+                // Check role
+                const roleMatch = member.role.toLowerCase().includes(query);
+                // Check bio
+                const bioMatch = member.bio && member.bio.toLowerCase().includes(query);
+                // Check hobbies
+                const hobbyMatch = member.hobbies && member.hobbies.some(h => h.toLowerCase().includes(query));
+                
+                return nameMatch || roleMatch || bioMatch || hobbyMatch;
+            });
+        }
+
+        function renderMembersList() {
             const container = document.getElementById('membersList');
+            const filtered = filterMembers();
+            const resultsCountSpan = document.getElementById('resultsCount');
+            
+            if (filtered.length === 0) {
+                resultsCountSpan.textContent = '';
+                container.innerHTML = `<div class="no-results"><span class="material-symbols-rounded" style="font-size: 3rem;">search_off</span><p style="margin-top: 12px;">No members found for "${currentSearchQuery}"</p></div>`;
+                return;
+            }
+            
+            resultsCountSpan.textContent = `${filtered.length} member${filtered.length !== 1 ? 's' : ''} found`;
             container.innerHTML = '';
             
-            familyMembers.forEach(member => {
+            filtered.forEach(member => {
                 const row = document.createElement('div');
                 row.className = 'member-row';
                 row.onclick = () => openProfileView(member);
-                
                 const bioPreview = member.bio ? member.bio.substring(0, 65) + (member.bio.length > 65 ? '...' : '') : '';
-                
                 row.innerHTML = `
-                    <div class="member-avatar">
-                        <img src="${member.image || 'https://via.placeholder.com/72?text=No+Photo'}" alt="${member.name}">
-                    </div>
+                    <div class="member-avatar"><img src="${member.image || 'https://via.placeholder.com/72?text=No+Photo'}" alt="${member.name}"></div>
                     <div class="member-info">
-                        <div class="member-name">
-                            ${member.name}
-                            <span class="member-role">${member.role || 'Member'}</span>
-                        </div>
+                        <div class="member-name">${member.name}<span class="member-role">${member.role || 'Member'}</span></div>
                         ${bioPreview ? `<div class="member-bio-preview">${bioPreview}</div>` : ''}
                     </div>
                     <span class="material-symbols-rounded chevron-icon">chevron_right</span>
@@ -669,163 +728,162 @@
             });
         }
 
-        // Open full edge-to-edge profile view (not a card, full screen)
+        function updateSearch(query) {
+            currentSearchQuery = query;
+            renderMembersList();
+        }
+
+        // Search Button Logic - Button becomes rounded search bar
+        const searchButton = document.getElementById('searchButton');
+        const expandedSearch = document.getElementById('expandedSearch');
+        const searchInput = document.getElementById('searchInput');
+        const closeSearch = document.getElementById('closeSearch');
+        
+        function openSearchBar() {
+            searchButton.style.display = 'none';
+            expandedSearch.classList.add('active');
+            setTimeout(() => searchInput.focus(), 100);
+        }
+        
+        function closeSearchBar() {
+            searchButton.style.display = 'flex';
+            expandedSearch.classList.remove('active');
+            searchInput.value = '';
+            updateSearch('');
+        }
+        
+        searchButton.addEventListener('click', openSearchBar);
+        closeSearch.addEventListener('click', closeSearchBar);
+        
+        searchInput.addEventListener('input', (e) => {
+            updateSearch(e.target.value);
+        });
+        
+        // Close on Escape
+        searchInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeSearchBar();
+                searchInput.blur();
+            }
+        });
+        
+        // Close when clicking outside (optional)
+        document.addEventListener('click', (e) => {
+            if (expandedSearch.classList.contains('active') && 
+                !expandedSearch.contains(e.target) && 
+                e.target !== searchButton) {
+                closeSearchBar();
+            }
+        });
+
+        // Theme System
+        function setTheme(theme) {
+            if (theme === 'system') {
+                document.documentElement.removeAttribute('data-theme');
+                localStorage.removeItem('theme');
+                updateThemeIcon();
+            } else {
+                document.documentElement.setAttribute('data-theme', theme);
+                localStorage.setItem('theme', theme);
+                updateThemeIcon();
+            }
+        }
+        
+        function getCurrentTheme() {
+            const saved = localStorage.getItem('theme');
+            if (saved) return saved;
+            return 'system';
+        }
+        
+        function updateThemeIcon() {
+            const theme = getCurrentTheme();
+            const icon = document.getElementById('themeIcon');
+            if (theme === 'light') {
+                icon.textContent = 'light_mode';
+            } else if (theme === 'dark') {
+                icon.textContent = 'dark_mode';
+            } else {
+                icon.textContent = 'brightness_auto';
+            }
+        }
+        
+        function cycleTheme() {
+            const current = getCurrentTheme();
+            if (current === 'light') setTheme('dark');
+            else if (current === 'dark') setTheme('system');
+            else setTheme('light');
+        }
+        
+        document.getElementById('themeToggle').addEventListener('click', cycleTheme);
+        
+        // Listen to system changes
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+            if (getCurrentTheme() === 'system') {
+                updateThemeIcon();
+            }
+        });
+        
+        // Initialize theme
+        const savedTheme = getCurrentTheme();
+        if (savedTheme !== 'system') {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        }
+        updateThemeIcon();
+
+        // Profile View Functions - NO 3D effect on bio
         function openProfileView(member) {
             const profileView = document.getElementById('profileView');
-            const profileHeaderTitle = document.getElementById('profileHeaderTitle');
-            const profileDynamicContent = document.getElementById('profileDynamicContent');
+            document.getElementById('profileHeaderTitle').textContent = member.name;
+            const container = document.getElementById('profileDynamicContent');
             
-            profileHeaderTitle.textContent = member.name;
-            
-            // Build dynamic profile content - edge to edge, no card pop-up
             let infoTiles = '';
-            
             if (member.age) {
-                infoTiles += `
-                    <div class="info-tile">
-                        <span class="material-symbols-rounded">cake</span>
-                        <div class="info-tile-content">
-                            <div class="info-tile-label">Age</div>
-                            <div class="info-tile-value">${member.age}</div>
-                        </div>
-                    </div>
-                `;
-            }
-            if (member.birthday && member.birthday !== 'N/A') {
-                infoTiles += `
-                    <div class="info-tile">
-                        <span class="material-symbols-rounded">celebration</span>
-                        <div class="info-tile-content">
-                            <div class="info-tile-label">Birthday</div>
-                            <div class="info-tile-value">${member.birthday}</div>
-                        </div>
-                    </div>
-                `;
+                infoTiles += `<div class="info-tile"><span class="material-symbols-rounded">cake</span><div><div class="info-tile-label">Age</div><div>${member.age}</div></div></div>`;
             }
             if (member.occupation) {
-                infoTiles += `
-                    <div class="info-tile">
-                        <span class="material-symbols-rounded">work</span>
-                        <div class="info-tile-content">
-                            <div class="info-tile-label">Occupation</div>
-                            <div class="info-tile-value">${member.occupation}</div>
-                        </div>
-                    </div>
-                `;
+                infoTiles += `<div class="info-tile"><span class="material-symbols-rounded">work</span><div><div class="info-tile-label">Occupation</div><div>${member.occupation}</div></div></div>`;
             }
             if (member.email && member.email !== 'N/A') {
-                infoTiles += `
-                    <div class="info-tile">
-                        <span class="material-symbols-rounded">mail</span>
-                        <div class="info-tile-content">
-                            <div class="info-tile-label">Email</div>
-                            <div class="info-tile-value">${member.email}</div>
-                        </div>
-                    </div>
-                `;
+                infoTiles += `<div class="info-tile"><span class="material-symbols-rounded">mail</span><div><div class="info-tile-label">Email</div><div>${member.email}</div></div></div>`;
             }
             if (member.phone && member.phone !== 'N/A') {
-                infoTiles += `
-                    <div class="info-tile">
-                        <span class="material-symbols-rounded">call</span>
-                        <div class="info-tile-content">
-                            <div class="info-tile-label">Phone</div>
-                            <div class="info-tile-value">${member.phone}</div>
-                        </div>
-                    </div>
-                `;
+                infoTiles += `<div class="info-tile"><span class="material-symbols-rounded">call</span><div><div class="info-tile-label">Phone</div><div>${member.phone}</div></div></div>`;
             }
             if (member.location) {
-                infoTiles += `
-                    <div class="info-tile">
-                        <span class="material-symbols-rounded">location_on</span>
-                        <div class="info-tile-content">
-                            <div class="info-tile-label">Location</div>
-                            <div class="info-tile-value">${member.location}</div>
-                        </div>
-                    </div>
-                `;
+                infoTiles += `<div class="info-tile"><span class="material-symbols-rounded">location_on</span><div><div class="info-tile-label">Location</div><div>${member.location}</div></div></div>`;
+            }
+            if (member.birthday && member.birthday !== 'N/A') {
+                infoTiles += `<div class="info-tile"><span class="material-symbols-rounded">celebration</span><div><div class="info-tile-label">Birthday</div><div>${member.birthday}</div></div></div>`;
             }
             
-            // Bio section
-            const bioHtml = member.bio ? `
-                <div class="bio-expanded-full">
-                    <span class="material-symbols-rounded" style="font-size: 1.2rem; vertical-align: middle; margin-right: 8px;">format_quote</span>
-                    ${member.bio}
-                </div>
-            ` : '';
-            
-            // Hobbies section
-            let hobbiesHtml = '';
-            if (member.hobbies && member.hobbies.length > 0) {
-                hobbiesHtml = `
-                    <div class="section-header">
-                        <span class="material-symbols-rounded">favorite</span>
-                        <span>Interests & Hobbies</span>
-                    </div>
-                    <div class="hobbies-container">
-                        ${member.hobbies.map(h => `<span class="hobby-badge">${h}</span>`).join('')}
-                    </div>
-                `;
-            }
-            
-            // Combine everything
-            profileDynamicContent.innerHTML = `
+            container.innerHTML = `
                 <div class="profile-hero">
-                    <div class="profile-hero-avatar">
-                        <img src="${member.image || 'https://via.placeholder.com/140?text=No+Photo'}" alt="${member.name}">
-                    </div>
+                    <div class="profile-hero-avatar"><img src="${member.image || 'https://via.placeholder.com/140'}" alt="${member.name}"></div>
                     <h3>${member.name}</h3>
-                    <div class="profile-hero-role">${member.role || 'Team Member'}</div>
+                    <div class="member-role" style="margin-top: 8px;">${member.role || 'Team Member'}</div>
                 </div>
-                <div class="profile-content">
-                    <div class="info-grid-expressive">
-                        ${infoTiles || '<div class="info-tile"><span class="material-symbols-rounded">info</span><div class="info-tile-content"><div class="info-tile-label">Info</div><div class="info-tile-value">No additional details</div></div></div>'}
-                    </div>
-                    ${bioHtml}
-                    ${hobbiesHtml}
-                </div>
+                <div class="info-grid-expressive">${infoTiles || '<div class="info-tile"><span class="material-symbols-rounded">info</span><div>No additional info available</div></div>'}</div>
+                ${member.bio ? `<div class="bio-expanded-full">${member.bio}</div>` : ''}
+                ${member.hobbies && member.hobbies.length ? `<div class="hobbies-container">${member.hobbies.map(h => `<span class="hobby-badge">${h}</span>`).join('')}</div>` : ''}
             `;
-            
-            // Show profile view with slide animation
             profileView.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
         
         function closeProfileView() {
-            const profileView = document.getElementById('profileView');
-            profileView.classList.remove('active');
+            document.getElementById('profileView').classList.remove('active');
             document.body.style.overflow = 'auto';
         }
         
-        // Back button event
         document.getElementById('backButton').addEventListener('click', closeProfileView);
-        
-        // Optional: Close on swipe back (simple)
-        let touchStartX = 0;
-        const profileView = document.getElementById('profileView');
-        
-        profileView.addEventListener('touchstart', (e) => {
-            touchStartX = e.touches[0].clientX;
+        document.getElementById('profileView').addEventListener('click', (e) => {
+            if (e.target.id === 'profileView') closeProfileView();
         });
-        
-        profileView.addEventListener('touchmove', (e) => {
-            const touchEndX = e.touches[0].clientX;
-            const deltaX = touchEndX - touchStartX;
-            if (deltaX > 60 && profileView.classList.contains('active')) {
-                closeProfileView();
-            }
-        });
-        
-        // Close with Escape key
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && profileView.classList.contains('active')) {
-                closeProfileView();
-            }
+            if (e.key === 'Escape' && document.getElementById('profileView').classList.contains('active')) closeProfileView();
         });
         
-        // Initialize
-        generateMemberRows();
+        renderMembersList();
     </script>
 </body>
 </html>
