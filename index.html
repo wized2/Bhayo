@@ -1,900 +1,625 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    
-    <!-- ============================================ -->
-    <!-- BASIC META TAGS & SEO -->
-    <!-- ============================================ -->
-    <title>Bhayo Group</title>
-    <meta name="description" content="Meet the Bhayo Group family — Majid, Ajmal, Mubeen, Rashid, and Umar. Discover their stories, hobbies, and connections in this expressive Material You experience.">
-    <meta name="keywords" content="Bhayo Group, Team Bhayo, Bhayo family, Majid, Ajmal, Mubeen, Rashid, Umar, Bhayo community, Pakistan, Rahim Yar Khan">
-    <meta name="author" content="Bhayo Group">
-    <meta name="robots" content="index, follow, max-image-preview:large">
-    <meta name="googlebot" content="index, follow">
-    <meta name="revisit-after" content="7 days">
-    <meta name="language" content="English">
-    <meta name="rating" content="General">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://bhayo.pages.dev">
-    
-    <!-- ============================================ -->
-    <!-- FAVICON & APP ICONS (Single icon.svg for all) -->
-    <!-- ============================================ -->
-    <!-- Standard favicon -->
-    <link rel="icon" type="image/svg+xml" href="icon.svg">
-    <link rel="icon" type="image/svg+xml" sizes="any" href="icon.svg">
-    
-    <!-- Apple Touch Icon (iOS, iPadOS) -->
-    <link rel="apple-touch-icon" href="icon.svg">
-    <link rel="apple-touch-icon-precomposed" href="icon.svg">
-    
-    <!-- Android Chrome Icons -->
-    <link rel="icon" type="image/svg+xml" sizes="192x192" href="icon.svg">
-    <link rel="icon" type="image/svg+xml" sizes="512x512" href="icon.svg">
-    
-    <!-- Microsoft Windows 8/10/11 Tile Icons -->
-    <meta name="msapplication-TileImage" content="icon.svg">
-    <meta name="msapplication-TileColor" content="#8B5CF6">
-    <meta name="msapplication-config" content="none">
-    
-    <!-- ============================================ -->
-    <!-- OPEN GRAPH / FACEBOOK / LINKEDIN SOCIAL -->
-    <!-- ============================================ -->
-    <meta property="og:title" content="Bhayo Group | United by Bond, Driven by Passion">
-    <meta property="og:description" content="Meet the Bhayo Group family — discover stories, hobbies, and connections. Tap any profile to explore the journey.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://bhayo.pages.dev">
-    <meta property="og:image" content="icon.svg">
-    <meta property="og:image:type" content="image/svg+xml">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:site_name" content="Bhayo Group">
-    <meta property="og:locale" content="en_US">
-    
-    <!-- ============================================ -->
-    <!-- TWITTER CARD (X / Twitter) -->
-    <!-- ============================================ -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Bhayo Group | United by Bond, Driven by Passion">
-    <meta name="twitter:description" content="Meet the Bhayo Group family — discover stories, hobbies, and connections. Tap any profile to explore the journey.">
-    <meta name="twitter:image" content="icon.svg">
-    <meta name="twitter:site" content="@bhayogroup">
-    <meta name="twitter:creator" content="@bhayogroup">
-    
-    <!-- ============================================ -->
-    <!-- INSTAGRAM / WHATSAPP / TELEGRAM PREVIEW -->
-    <!-- ============================================ -->
-    <meta property="og:image:secure_url" content="icon.svg">
-    <meta property="og:image:alt" content="Bhayo Group Logo - United by Bond">
-    
-    <!-- ============================================ -->
-    <!-- MICROSOFT / WINDOWS SPECIFIC -->
-    <!-- ============================================ -->
-    <meta name="msapplication-square70x70logo" content="icon.svg">
-    <meta name="msapplication-square150x150logo" content="icon.svg">
-    <meta name="msapplication-wide310x150logo" content="icon.svg">
-    <meta name="msapplication-square310x310logo" content="icon.svg">
-    <meta name="msapplication-navbutton-color" content="#8B5CF6">
-    <meta name="msapplication-starturl" content="https://bhayo.pages.dev">
-    
-    <!-- ============================================ -->
-    <!-- ANDROID / CHROME / PWA META -->
-    <!-- ============================================ -->
-    <meta name="theme-color" content="#8B5CF6" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#A78BFA" media="(prefers-color-scheme: dark)">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Bhayo Group">
-    <meta name="application-name" content="Bhayo Group">
-    
-    <!-- ============================================ -->
-    <!-- GOOGLE / DUCKDUCKGO / BING SITE VERIFICATION -->
-    <!-- ============================================ -->
-    <meta name="google-site-verification" content="bhayo-pages-dev-verification">
-    <meta name="bingbot" content="index, follow">
-    
-    <!-- ============================================ -->
-    <!-- GEO TAGS & REGIONAL -->
-    <!-- ============================================ -->
-    <meta name="geo.region" content="PK-PB">
-    <meta name="geo.placename" content="Rahim Yar Khan">
-    <meta name="geo.position" content="28.4195;70.3030">
-    <meta name="ICBM" content="28.4195, 70.3030">
-    
-    <!-- ============================================ -->
-    <!-- RESOURCES & FONTS -->
-    <!-- ============================================ -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0,1" />
-    
-    <!-- ============================================ -->
-    <!-- STYLES -->
-    <!-- ============================================ -->
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
-            user-select: none;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Team Bhayo · Bhayo Group</title>
+<meta name="description" content="Meet the Bhayo Group family: Majid, Ajmal, Mubeen, Rashid and Umar. Profiles, hobbies, contact details and photo galleries.">
+<meta name="author" content="Bhayo Group">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bhayo.pages.dev/">
 
-        input, textarea {
-            user-select: text;
-        }
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<link rel="apple-touch-icon" href="icon.svg">
 
-        :root {
-            --md-sys-color-primary: #8B5CF6;
-            --md-sys-color-on-primary: #FFFFFF;
-            --md-sys-color-primary-container: #EDE9FE;
-            --md-sys-color-on-primary-container: #2E1065;
-            --md-sys-color-secondary: #6D28D9;
-            --md-sys-color-tertiary: #EC489A;
-            --md-sys-color-surface: #FFFFFF;
-            --md-sys-color-surface-dim: #F8FAFC;
-            --md-sys-color-surface-bright: #FFFFFF;
-            --md-sys-color-surface-container-lowest: #FFFFFF;
-            --md-sys-color-surface-container-low: #F9FAFB;
-            --md-sys-color-surface-container: #F3F4F6;
-            --md-sys-color-surface-container-high: #F1F5F9;
-            --md-sys-color-surface-container-highest: #FFFFFF;
-            --md-sys-color-on-surface: #0F172A;
-            --md-sys-color-on-surface-variant: #475569;
-            --md-sys-color-outline: #E2E8F0;
-            --md-sys-color-outline-variant: #F1F5F9;
-            --md-sys-color-shadow: rgba(0,0,0,0.1);
-        }
+<meta property="og:title" content="Team Bhayo · United by bond, driven by passion">
+<meta property="og:description" content="Meet the Bhayo Group family. Tap a profile to see their story, hobbies and photos.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bhayo.pages.dev/">
+<meta property="og:image" content="https://bhayo.pages.dev/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Bhayo Group">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Team Bhayo · United by bond, driven by passion">
+<meta name="twitter:description" content="Meet the Bhayo Group family. Tap a profile to see their story, hobbies and photos.">
+<meta name="twitter:image" content="https://bhayo.pages.dev/og.png">
 
-        [data-theme="dark"] {
-            --md-sys-color-primary: #A78BFA;
-            --md-sys-color-on-primary: #1E1A2F;
-            --md-sys-color-primary-container: #2D2A4A;
-            --md-sys-color-on-primary-container: #E9DDFF;
-            --md-sys-color-secondary: #C084FC;
-            --md-sys-color-tertiary: #F472B6;
-            --md-sys-color-surface: #0F0F1A;
-            --md-sys-color-surface-dim: #0A0A12;
-            --md-sys-color-surface-bright: #1A1A2A;
-            --md-sys-color-surface-container-lowest: #08080F;
-            --md-sys-color-surface-container-low: #12121F;
-            --md-sys-color-surface-container: #1A1A2A;
-            --md-sys-color-surface-container-high: #222232;
-            --md-sys-color-surface-container-highest: #2A2A3A;
-            --md-sys-color-on-surface: #F1F5F9;
-            --md-sys-color-on-surface-variant: #CBD5E1;
-            --md-sys-color-outline: #2D2D3A;
-            --md-sys-color-outline-variant: #222232;
-            --md-sys-color-shadow: rgba(0,0,0,0.3);
-        }
+<meta name="theme-color" content="#F7F5FB" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0E0D16" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<meta name="geo.region" content="PK-PB">
+<meta name="geo.placename" content="Rahim Yar Khan">
 
-        @media (prefers-color-scheme: dark) {
-            :root:not([data-theme="light"]) {
-                --md-sys-color-primary: #A78BFA;
-                --md-sys-color-on-primary: #1E1A2F;
-                --md-sys-color-primary-container: #2D2A4A;
-                --md-sys-color-on-primary-container: #E9DDFF;
-                --md-sys-color-secondary: #C084FC;
-                --md-sys-color-tertiary: #F472B6;
-                --md-sys-color-surface: #0F0F1A;
-                --md-sys-color-surface-dim: #0A0A12;
-                --md-sys-color-surface-bright: #1A1A2A;
-                --md-sys-color-surface-container-lowest: #08080F;
-                --md-sys-color-surface-container-low: #12121F;
-                --md-sys-color-surface-container: #1A1A2A;
-                --md-sys-color-surface-container-high: #222232;
-                --md-sys-color-surface-container-highest: #2A2A3A;
-                --md-sys-color-on-surface: #F1F5F9;
-                --md-sys-color-on-surface-variant: #CBD5E1;
-                --md-sys-color-outline: #2D2D3A;
-                --md-sys-color-outline-variant: #222232;
-            }
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,0&display=block">
 
-        body {
-            font-family: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
-            background: var(--md-sys-color-surface-dim);
-            min-height: 100vh;
-            color: var(--md-sys-color-on-surface);
-            overflow-x: hidden;
-            transition: background-color 0.3s ease, color 0.2s ease;
-        }
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
-        .ambient-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            pointer-events: none;
-            background: radial-gradient(ellipse at 20% 30%, rgba(139,92,246,0.08) 0%, transparent 50%),
-                        radial-gradient(ellipse at 85% 70%, rgba(236,72,153,0.08) 0%, transparent 50%);
-            transition: opacity 0.3s ease;
-        }
+  :root {
+    --primary: #7C4DFF;
+    --primary-soft: #EDE7FF;
+    --on-primary: #FFFFFF;
+    --accent: #E6458F;
+    --bg: #F7F5FB;
+    --surface: #FFFFFF;
+    --surface-2: #F1EEF8;
+    --text: #17141F;
+    --muted: #5E5A6E;
+    --line: #E6E2F0;
+    --shadow: 0 1px 2px rgba(30,20,60,.06), 0 8px 24px rgba(30,20,60,.07);
+    --shadow-lg: 0 2px 4px rgba(30,20,60,.08), 0 18px 44px rgba(30,20,60,.14);
+    --radius: 24px;
+    --ease: cubic-bezier(.2,.8,.2,1);
+  }
+  :root[data-theme="dark"] {
+    --primary: #B39DFF;
+    --primary-soft: #2A2445;
+    --on-primary: #1A1230;
+    --accent: #FF7AB6;
+    --bg: #0E0D16;
+    --surface: #17151F;
+    --surface-2: #1F1C2A;
+    --text: #F3F0FA;
+    --muted: #B1ACC3;
+    --line: #2B2838;
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.35);
+    --shadow-lg: 0 2px 4px rgba(0,0,0,.5), 0 18px 44px rgba(0,0,0,.5);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --primary: #B39DFF; --primary-soft: #2A2445; --on-primary: #1A1230; --accent: #FF7AB6;
+      --bg: #0E0D16; --surface: #17151F; --surface-2: #1F1C2A; --text: #F3F0FA; --muted: #B1ACC3; --line: #2B2838;
+      --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.35);
+      --shadow-lg: 0 2px 4px rgba(0,0,0,.5), 0 18px 44px rgba(0,0,0,.5);
+    }
+  }
 
-        [data-theme="dark"] .ambient-bg {
-            background: radial-gradient(ellipse at 20% 30%, rgba(167,139,250,0.12) 0%, transparent 50%),
-                        radial-gradient(ellipse at 85% 70%, rgba(244,114,182,0.12) 0%, transparent 50%);
-        }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    min-height: 100dvh;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    transition: background-color .3s ease, color .2s ease;
+  }
+  body.no-scroll { overflow: hidden; }
+  button { font: inherit; color: inherit; cursor: pointer; border: 0; background: none; }
+  a { color: inherit; text-decoration: none; }
+  img { display: block; max-width: 100%; }
+  :focus-visible { outline: 3px solid var(--primary); outline-offset: 3px; border-radius: 12px; }
+  .icon { font-family: 'Material Symbols Rounded'; font-weight: 400; font-style: normal; line-height: 1; letter-spacing: normal; text-transform: none; display: inline-block; white-space: nowrap; direction: ltr; width: 1em; overflow: hidden; visibility: hidden; font-size: 24px; -webkit-font-feature-settings: 'liga'; font-feature-settings: 'liga'; user-select: none; flex-shrink: 0; }
+  .icons-ready .icon { visibility: visible; }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
-        .dynamic-blur {
-            position: fixed;
-            top: -20%;
-            left: -20%;
-            width: 140%;
-            height: 140%;
-            background: radial-gradient(circle at 40% 40%, rgba(139,92,246,0.12) 0%, rgba(236,72,153,0.08) 50%, transparent 80%);
-            filter: blur(80px);
-            z-index: 0;
-            pointer-events: none;
-            animation: slowDrift 28s infinite alternate ease-in-out;
-        }
+  /* ambient background */
+  .ambient { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+  .ambient::before, .ambient::after { content: ''; position: absolute; width: 60vmax; height: 60vmax; border-radius: 50%; filter: blur(90px); opacity: .5; }
+  .ambient::before { top: -25vmax; left: -15vmax; background: radial-gradient(circle, rgba(124,77,255,.28), transparent 65%); animation: drift 26s ease-in-out infinite alternate; }
+  .ambient::after { bottom: -28vmax; right: -18vmax; background: radial-gradient(circle, rgba(230,69,143,.22), transparent 65%); animation: drift 32s ease-in-out infinite alternate-reverse; }
+  :root[data-theme="dark"] .ambient::before { background: radial-gradient(circle, rgba(179,157,255,.22), transparent 65%); }
+  :root[data-theme="dark"] .ambient::after { background: radial-gradient(circle, rgba(255,122,182,.16), transparent 65%); }
+  @keyframes drift { to { transform: translate(4vmax, 3vmax) scale(1.08); } }
 
-        [data-theme="dark"] .dynamic-blur {
-            background: radial-gradient(circle at 40% 40%, rgba(167,139,250,0.18) 0%, rgba(244,114,182,0.12) 50%, transparent 80%);
-        }
+  .app { position: relative; z-index: 1; min-height: 100vh; min-height: 100dvh; display: flex; flex-direction: column; }
+  .wrap { width: 100%; max-width: 1120px; margin: 0 auto; padding-left: max(20px, env(safe-area-inset-left)); padding-right: max(20px, env(safe-area-inset-right)); }
 
-        @keyframes slowDrift {
-            0% { transform: translate(0%, 0%) scale(1); opacity: 0.6; }
-            100% { transform: translate(3%, 4%) scale(1.08); opacity: 0.9; }
-        }
+  /* top bar */
+  .topbar { position: sticky; top: 0; z-index: 20; backdrop-filter: saturate(1.4) blur(18px); -webkit-backdrop-filter: saturate(1.4) blur(18px); background: color-mix(in srgb, var(--bg) 78%, transparent); border-bottom: 1px solid transparent; transition: border-color .25s ease; padding-top: env(safe-area-inset-top); }
+  .topbar.scrolled { border-bottom-color: var(--line); }
+  .topbar-in { display: flex; align-items: center; justify-content: space-between; gap: 12px; height: 64px; }
+  .brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: -.01em; }
+  .brand-mark { width: 36px; height: 36px; border-radius: 12px; background: linear-gradient(135deg, var(--primary), var(--accent)); display: grid; place-items: center; color: #fff; }
+  .brand-mark .icon { font-size: 22px; font-variation-settings: 'FILL' 1; }
+  .tools { display: flex; gap: 8px; }
+  .icon-btn { width: 44px; height: 44px; border-radius: 16px; display: grid; place-items: center; background: var(--surface); border: 1px solid var(--line); color: var(--muted); transition: transform .2s var(--ease), background .2s, color .2s; }
+  .icon-btn:hover { background: var(--primary); color: var(--on-primary); border-color: transparent; }
+  .icon-btn:active { transform: scale(.94); }
 
-        .app-container {
-            position: relative;
-            z-index: 2;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
+  /* hero */
+  .hero { padding: 40px 0 8px; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--primary); background: var(--primary-soft); padding: 7px 14px; border-radius: 999px; }
+  .eyebrow .icon { font-size: 18px; }
+  h1 { font-size: clamp(2.5rem, 7vw, 4.4rem); line-height: 1.04; letter-spacing: -.035em; font-weight: 800; margin: 18px 0 14px; background: linear-gradient(120deg, var(--primary), var(--accent) 60%, var(--primary)); background-size: 200% auto; -webkit-background-clip: text; background-clip: text; color: transparent; animation: sheen 9s linear infinite; }
+  @keyframes sheen { to { background-position: 200% center; } }
+  .lede { font-size: clamp(1rem, 2.2vw, 1.2rem); color: var(--muted); max-width: 34rem; font-weight: 500; }
+  .stats { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+  .stat { display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 999px; font-weight: 600; font-size: .9rem; color: var(--muted); }
+  .stat b { color: var(--text); font-weight: 800; }
+  .stat .icon { font-size: 19px; color: var(--primary); }
 
-        .hero-section {
-            padding: 48px 24px 24px;
-            background: transparent;
-        }
+  .search { display: none; margin-top: 22px; }
+  .search.open { display: block; animation: rise .3s var(--ease); }
+  .search-bar { display: flex; align-items: center; gap: 10px; background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 4px 8px 4px 20px; box-shadow: var(--shadow); }
+  .search-bar:focus-within { border-color: var(--primary); box-shadow: 0 0 0 4px color-mix(in srgb, var(--primary) 20%, transparent); }
+  .search-bar input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; color: var(--text); font: inherit; font-size: 1rem; padding: 12px 0; }
+  .search-bar input::placeholder { color: var(--muted); opacity: .7; }
+  @keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 
-        .header-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 24px;
-            gap: 12px;
-        }
+  .count { margin: 26px 0 14px; font-size: .85rem; font-weight: 600; color: var(--muted); }
 
-        .header-chip {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(139, 92, 246, 0.12);
-            backdrop-filter: blur(12px);
-            padding: 6px 18px;
-            border-radius: 999px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--md-sys-color-primary);
-            border: 0.5px solid rgba(139,92,246,0.2);
-        }
+  /* member cards */
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; padding-bottom: 48px; }
+  .card { position: relative; display: flex; align-items: center; gap: 16px; text-align: left; width: 100%; padding: 16px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s; animation: rise .5s var(--ease) backwards; }
+  @media (hover: hover) { .card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); border-color: color-mix(in srgb, var(--primary) 40%, var(--line)); } }
+  .card:active { transform: scale(.985); }
+  .avatar { width: 76px; height: 76px; border-radius: 26px; overflow: hidden; flex-shrink: 0; background: linear-gradient(135deg, var(--primary-soft), var(--surface-2)); display: grid; place-items: center; font-weight: 800; font-size: 1.6rem; color: var(--primary); }
+  .avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; }
+  .card-body { flex: 1; min-width: 0; }
+  .card-name { font-size: 1.2rem; font-weight: 800; letter-spacing: -.02em; line-height: 1.2; }
+  .role { display: inline-block; margin-top: 6px; font-size: .75rem; font-weight: 700; color: var(--primary); background: var(--primary-soft); padding: 3px 11px; border-radius: 999px; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; vertical-align: top; }
+  .card-bio { margin-top: 6px; font-size: .86rem; color: var(--muted); display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; }
+  .card-end { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; color: var(--muted); }
+  .photo-pill { display: inline-flex; align-items: center; gap: 4px; font-size: .75rem; font-weight: 700; background: var(--surface-2); border-radius: 999px; padding: 3px 9px; }
+  .photo-pill .icon { font-size: 15px; }
+  .empty { grid-column: 1 / -1; text-align: center; padding: 56px 16px; color: var(--muted); font-weight: 600; }
+  .empty .icon { font-size: 48px; display: block; margin: 0 auto 8px; opacity: .6; }
 
-        .action-buttons {
-            display: flex;
-            gap: 12px;
-            align-items: center;
-        }
+  footer { margin-top: auto; border-top: 1px solid var(--line); padding: 26px 0 calc(30px + env(safe-area-inset-bottom)); text-align: center; color: var(--muted); font-size: .85rem; font-weight: 600; }
+  footer .icon { font-size: 17px; color: var(--accent); vertical-align: -3px; font-variation-settings: 'FILL' 1; }
 
-        .search-button, .theme-toggle {
-            width: 44px;
-            height: 44px;
-            border-radius: 30px;
-            background: var(--md-sys-color-surface-container);
-            border: 1px solid var(--md-sys-color-outline);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.2s ease;
-            color: var(--md-sys-color-on-surface-variant);
-            flex-shrink: 0;
-        }
+  /* profile page */
+  .profile { position: fixed; inset: 0; z-index: 50; background: var(--bg); overflow-y: auto; overscroll-behavior: contain; transform: translateX(100%); visibility: hidden; transition: transform .45s var(--ease), visibility 0s .45s; }
+  .profile.open { transform: none; visibility: visible; transition: transform .45s var(--ease), visibility 0s; }
+  .p-bar { position: sticky; top: 0; z-index: 5; display: flex; align-items: center; gap: 14px; padding: calc(12px + env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) 12px max(16px, env(safe-area-inset-left)); backdrop-filter: blur(18px) saturate(1.4); -webkit-backdrop-filter: blur(18px) saturate(1.4); background: color-mix(in srgb, var(--bg) 80%, transparent); border-bottom: 1px solid var(--line); }
+  .p-bar h2 { font-size: 1.05rem; font-weight: 800; }
+  .p-inner { max-width: 880px; margin: 0 auto; padding: 0 max(20px, env(safe-area-inset-right)) calc(56px + env(safe-area-inset-bottom)) max(20px, env(safe-area-inset-left)); }
+  .p-hero { position: relative; margin-top: 20px; padding: 40px 20px 28px; border-radius: 32px; overflow: hidden; text-align: center; background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow); isolation: isolate; }
+  .p-hero::before { content: ''; position: absolute; inset: 0; z-index: -1; background: var(--cover) center/cover; filter: blur(46px) saturate(1.5); transform: scale(1.5); opacity: .4; }
+  .p-photo { width: 148px; height: 148px; margin: 0 auto 18px; border-radius: 50%; overflow: hidden; border: 5px solid var(--surface); box-shadow: 0 0 0 3px var(--primary), var(--shadow-lg); background: var(--primary-soft); display: grid; place-items: center; font-size: 3rem; font-weight: 800; color: var(--primary); }
+  .p-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; }
+  .p-hero h3 { font-size: clamp(1.8rem, 5vw, 2.4rem); font-weight: 800; letter-spacing: -.03em; line-height: 1.1; }
+  .p-hero .role { margin-top: 10px; font-size: .85rem; padding: 5px 14px; }
+  .actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 22px; }
+  .act { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 999px; font-weight: 700; font-size: .92rem; background: var(--surface); border: 1px solid var(--line); transition: transform .2s var(--ease), background .2s, color .2s; }
+  .act .icon { font-size: 20px; }
+  .act:hover { background: var(--primary-soft); }
+  .act:active { transform: scale(.96); }
+  .act.main { background: var(--primary); color: var(--on-primary); border-color: transparent; }
+  .act.main:hover { filter: brightness(1.08); background: var(--primary); }
 
-        .search-button:hover, .theme-toggle:hover {
-            background: var(--md-sys-color-primary);
-            color: white;
-            transform: scale(1.02);
-        }
+  .section { margin-top: 36px; }
+  .section-h { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+  .section-h h4 { font-size: 1.15rem; font-weight: 800; letter-spacing: -.02em; display: flex; align-items: center; gap: 10px; }
+  .section-h h4 .icon { color: var(--primary); font-size: 24px; }
+  .section-h span.n { font-size: .85rem; font-weight: 700; color: var(--muted); }
 
-        .expanded-search-container {
-            margin: 20px 0 8px;
-            display: none;
-            animation: slideDown 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-        }
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+  .tile { display: flex; align-items: center; gap: 14px; padding: 16px 18px; background: var(--surface); border: 1px solid var(--line); border-radius: 20px; min-width: 0; }
+  .tile .icon { color: var(--primary); font-size: 26px; }
+  .tile-l { font-size: .68rem; font-weight: 800; text-transform: uppercase; letter-spacing: .09em; color: var(--primary); }
+  .tile-v { font-weight: 600; overflow-wrap: anywhere; user-select: text; }
+  .bio { background: var(--surface); border: 1px solid var(--line); border-radius: 22px; padding: 22px; color: var(--muted); font-weight: 500; line-height: 1.75; user-select: text; }
+  .chips { display: flex; flex-wrap: wrap; gap: 10px; }
+  .chip { background: var(--primary-soft); color: var(--primary); font-weight: 700; padding: 9px 18px; border-radius: 999px; font-size: .9rem; }
 
-        .expanded-search-container.active {
-            display: block;
-        }
+  /* gallery: masonry columns keep every photo whole, whatever its shape */
+  .gallery { columns: 2; column-gap: 12px; }
+  .shot { position: relative; display: block; width: 100%; margin: 0 0 12px; break-inside: avoid; border-radius: 18px; overflow: hidden; background: var(--surface-2); border: 1px solid var(--line); box-shadow: var(--shadow); transition: transform .3s var(--ease), box-shadow .3s var(--ease); animation: rise .5s var(--ease) backwards; }
+  .shot.loading { aspect-ratio: 4 / 5; }
+  .shot.loading::after { content: ''; position: absolute; inset: 0; background: linear-gradient(100deg, transparent 20%, color-mix(in srgb, var(--primary) 14%, transparent) 50%, transparent 80%); background-size: 200% 100%; animation: shimmer 1.4s linear infinite; }
+  @keyframes shimmer { from { background-position: 200% 0; } to { background-position: -200% 0; } }
+  .shot img { width: 100%; height: auto; opacity: 0; transition: opacity .5s ease; }
+  .shot.ready img { opacity: 1; }
+  .shot.failed { aspect-ratio: 4 / 3; display: grid; place-items: center; color: var(--muted); font-size: .8rem; font-weight: 600; }
+  .shot.failed img { display: none; }
+  .shot .cap { position: absolute; left: 0; right: 0; bottom: 0; padding: 26px 12px 10px; font-size: .75rem; font-weight: 700; color: #fff; background: linear-gradient(transparent, rgba(0,0,0,.6)); opacity: 0; transition: opacity .25s; text-align: left; }
+  @media (hover: hover) { .shot:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); } .shot:hover .cap { opacity: 1; } }
+  .shot:focus-visible .cap { opacity: 1; }
+  .gal-empty { color: var(--muted); font-weight: 600; padding: 22px; text-align: center; background: var(--surface); border: 1px dashed var(--line); border-radius: 20px; }
 
-        @keyframes slideDown {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+  /* lightbox */
+  .lb { position: fixed; inset: 0; z-index: 100; display: none; flex-direction: column; background: rgba(8,7,14,.94); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); color: #fff; touch-action: pan-y; }
+  .lb.open { display: flex; animation: fade .25s ease; }
+  @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+  .lb-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: calc(10px + env(safe-area-inset-top)) max(12px, env(safe-area-inset-right)) 10px max(12px, env(safe-area-inset-left)); }
+  .lb-meta { min-width: 0; padding-left: 6px; }
+  .lb-title { font-weight: 800; font-size: .95rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .lb-sub { font-size: .78rem; opacity: .7; font-weight: 600; }
+  .lb-btns { display: flex; gap: 8px; }
+  .lb-btn { width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; background: rgba(255,255,255,.12); color: #fff; transition: background .2s, transform .2s; }
+  .lb-btn:hover { background: rgba(255,255,255,.24); }
+  .lb-btn:active { transform: scale(.92); }
+  .lb-stage { position: relative; flex: 1; min-height: 0; display: grid; grid-template: minmax(0, 1fr) / minmax(0, 1fr); place-items: center; padding: 0 max(8px, env(safe-area-inset-right)) 0 max(8px, env(safe-area-inset-left)); overflow: hidden; }
+  .lb-img { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; border-radius: 10px; transition: opacity .25s ease, transform .35s var(--ease); user-select: none; -webkit-user-drag: none; }
+  .lb-img.swap { opacity: 0; transform: scale(.98); }
+  .lb-spin { position: absolute; width: 44px; height: 44px; border-radius: 50%; border: 3px solid rgba(255,255,255,.2); border-top-color: #fff; animation: spin .8s linear infinite; display: none; }
+  .lb.busy .lb-spin { display: block; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .lb-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 52px; height: 52px; border-radius: 50%; background: rgba(255,255,255,.14); color: #fff; display: grid; place-items: center; transition: background .2s; }
+  .lb-nav:hover { background: rgba(255,255,255,.26); }
+  .lb-nav.prev { left: 14px; } .lb-nav.next { right: 14px; }
+  .lb-nav[hidden] { display: none; }
+  .lb-dots { display: flex; justify-content: center; gap: 7px; padding: 12px 12px calc(16px + env(safe-area-inset-bottom)); flex-wrap: wrap; }
+  .lb-dot { width: 8px; height: 8px; border-radius: 99px; background: rgba(255,255,255,.3); transition: width .25s var(--ease), background .25s; }
+  .lb-dot.on { width: 24px; background: #fff; }
+  @media (max-width: 640px) { .lb-nav { display: none; } }
 
-        .search-bar {
-            background: var(--md-sys-color-surface-container);
-            border-radius: 60px;
-            border: 1px solid var(--md-sys-color-outline);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 8px 20px;
-        }
-
-        .search-bar:focus-within {
-            border-color: var(--md-sys-color-primary);
-            box-shadow: 0 0 0 2px rgba(139,92,246,0.2);
-        }
-
-        .search-input {
-            flex: 1;
-            background: transparent;
-            border: none;
-            font-size: 1rem;
-            font-family: inherit;
-            color: var(--md-sys-color-on-surface);
-            outline: none;
-            padding: 10px 0;
-            user-select: text;
-        }
-
-        .search-input::placeholder {
-            color: var(--md-sys-color-on-surface-variant);
-            opacity: 0.6;
-        }
-
-        .close-search {
-            background: none;
-            border: none;
-            cursor: pointer;
-            color: var(--md-sys-color-on-surface-variant);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 32px;
-            height: 32px;
-            border-radius: 20px;
-            transition: all 0.2s;
-        }
-
-        .close-search:hover {
-            background: var(--md-sys-color-surface-container-high);
-        }
-
-        h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #8B5CF6 0%, #EC489A 50%, #A855F7 100%);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            letter-spacing: -0.02em;
-            margin-bottom: 12px;
-            line-height: 1.2;
-        }
-
-        .subhead {
-            font-size: 1.1rem;
-            color: var(--md-sys-color-on-surface-variant);
-            font-weight: 500;
-            max-width: 500px;
-        }
-
-        .results-count {
-            padding: 8px 24px;
-            font-size: 0.85rem;
-            color: var(--md-sys-color-on-surface-variant);
-            font-weight: 500;
-        }
-
-        .members-list {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-        }
-
-        .member-row {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            padding: 20px 24px;
-            background: var(--md-sys-color-surface-container-lowest);
-            border-bottom: 1px solid var(--md-sys-color-outline);
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.05, 0.7, 0.1, 1);
-        }
-
-        .member-row:active {
-            background: var(--md-sys-color-surface-container);
-            transform: scale(0.99);
-        }
-
-        @media (hover: hover) {
-            .member-row:hover {
-                background: var(--md-sys-color-surface-container);
-                padding-left: 28px;
-            }
-        }
-
-        .member-avatar {
-            width: 72px;
-            height: 72px;
-            border-radius: 32px;
-            overflow: hidden;
-            background: linear-gradient(135deg, var(--md-sys-color-primary-container), #F3E8FF);
-            flex-shrink: 0;
-            transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-        }
-
-        .member-row:hover .member-avatar {
-            border-radius: 28px;
-            transform: scale(1.02);
-        }
-
-        .member-avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .member-info {
-            flex: 1;
-        }
-
-        .member-name {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--md-sys-color-on-surface);
-            letter-spacing: -0.3px;
-            margin-bottom: 4px;
-            display: flex;
-            align-items: baseline;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .member-role {
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--md-sys-color-primary);
-            background: var(--md-sys-color-primary-container);
-            padding: 4px 12px;
-            border-radius: 40px;
-            display: inline-block;
-        }
-
-        .member-bio-preview {
-            font-size: 0.85rem;
-            color: var(--md-sys-color-on-surface-variant);
-            opacity: 0.75;
-            display: -webkit-box;
-            -webkit-line-clamp: 1;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            max-width: 85%;
-        }
-
-        .chevron-icon {
-            color: var(--md-sys-color-on-surface-variant);
-            opacity: 0.6;
-        }
-
-        .no-results {
-            text-align: center;
-            padding: 60px 24px;
-            color: var(--md-sys-color-on-surface-variant);
-            font-weight: 500;
-        }
-
-        .app-footer {
-            padding: 24px 24px 32px;
-            text-align: center;
-            border-top: 1px solid var(--md-sys-color-outline);
-            background: var(--md-sys-color-surface-container-lowest);
-            margin-top: auto;
-        }
-
-        .footer-text {
-            color: var(--md-sys-color-on-surface-variant);
-            font-size: 0.85rem;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-
-        .profile-view {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--md-sys-color-surface-dim);
-            z-index: 1000;
-            transform: translateX(100%);
-            transition: transform 0.45s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-            display: flex;
-            flex-direction: column;
-            overflow-y: auto;
-        }
-
-        .profile-view.active {
-            transform: translateX(0);
-        }
-
-        .profile-header-edge {
-            position: sticky;
-            top: 0;
-            background: var(--md-sys-color-surface-container-lowest);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--md-sys-color-outline);
-            padding: 16px 20px;
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            z-index: 10;
-        }
-
-        .back-button {
-            width: 44px;
-            height: 44px;
-            border-radius: 30px;
-            background: var(--md-sys-color-surface-container);
-            border: none;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.2s ease;
-            color: var(--md-sys-color-on-surface-variant);
-        }
-
-        .back-button:hover {
-            background: var(--md-sys-color-primary);
-            color: white;
-        }
-
-        .profile-hero {
-            padding: 32px 24px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background: linear-gradient(135deg, rgba(139,92,246,0.05) 0%, rgba(236,72,153,0.05) 100%);
-            border-bottom: 1px solid var(--md-sys-color-outline);
-        }
-
-        .profile-hero-avatar {
-            width: 140px;
-            height: 140px;
-            border-radius: 70px;
-            overflow: hidden;
-            border: 4px solid var(--md-sys-color-primary);
-            margin-bottom: 20px;
-        }
-
-        .profile-hero-avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .profile-hero h3 {
-            font-size: 2rem;
-            font-weight: 800;
-            margin-bottom: 8px;
-            color: var(--md-sys-color-on-surface);
-        }
-
-        .info-grid-expressive {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 12px;
-            margin: 24px;
-        }
-
-        .info-tile {
-            background: var(--md-sys-color-surface-container-lowest);
-            padding: 16px 20px;
-            border-radius: 24px;
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            border: 1px solid var(--md-sys-color-outline-variant);
-        }
-
-        .info-tile .material-symbols-rounded {
-            color: var(--md-sys-color-primary);
-            font-size: 1.8rem;
-        }
-
-        .info-tile-label {
-            font-size: 0.7rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: var(--md-sys-color-primary);
-            margin-bottom: 4px;
-        }
-
-        .bio-expanded-full {
-            background: var(--md-sys-color-surface-container);
-            padding: 24px;
-            border-radius: 24px;
-            margin: 0 24px 24px;
-            line-height: 1.7;
-            color: var(--md-sys-color-on-surface-variant);
-            font-weight: 500;
-        }
-
-        .hobbies-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin: 0 24px 32px;
-        }
-
-        .hobby-badge {
-            background: var(--md-sys-color-primary-container);
-            padding: 10px 24px;
-            border-radius: 40px;
-            font-weight: 600;
-            color: var(--md-sys-color-on-primary-container);
-        }
-
-        @keyframes rowFadeIn {
-            from { opacity: 0; transform: translateX(-12px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-
-        .member-row {
-            animation: rowFadeIn 0.35s cubic-bezier(0.05, 0.7, 0.1, 1) backwards;
-        }
-
-        @media (max-width: 680px) {
-            .hero-section { padding: 32px 20px 20px; }
-            h1 { font-size: 2.4rem; }
-            .member-row { padding: 16px 20px; gap: 16px; }
-            .member-avatar { width: 60px; height: 60px; border-radius: 28px; }
-            .member-name { font-size: 1.25rem; }
-            .profile-hero-avatar { width: 110px; height: 110px; }
-        }
-    </style>
+  @media (min-width: 560px) { .gallery { columns: 3; } }
+  @media (min-width: 900px) { .gallery { columns: 3; column-gap: 16px; } .shot { margin-bottom: 16px; } }
+  @media (max-width: 420px) { .grid { grid-template-columns: 1fr; } .card { padding: 14px; gap: 14px; } .avatar { width: 64px; height: 64px; border-radius: 22px; } }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; } }
+</style>
 </head>
 <body>
-    <div class="ambient-bg"></div>
-    <div class="dynamic-blur"></div>
+<div class="ambient" aria-hidden="true"></div>
 
-    <div class="app-container">
-        <div id="homeView" class="home-view">
-            <div class="hero-section">
-                <div class="header-top">
-                    <div class="header-chip">
-                        <span class="material-symbols-rounded">diversity_3</span>
-                        <span>THE CIRCLE · EST. 2025</span>
-                    </div>
-                    <div class="action-buttons">
-                        <button class="search-button" id="searchButton">
-                            <span class="material-symbols-rounded">search</span>
-                        </button>
-                        <button class="theme-toggle" id="themeToggle">
-                            <span class="material-symbols-rounded" id="themeIcon">light_mode</span>
-                        </button>
-                    </div>
-                </div>
-                <h1>Team Bhayo</h1>
-                <p class="subhead">Connected by spirit, driven by passion — tap any profile to explore.</p>
-                
-                <div class="expanded-search-container" id="expandedSearch">
-                    <div class="search-bar">
-                        <span class="material-symbols-rounded">search</span>
-                        <input type="text" class="search-input" id="searchInput" placeholder="Search by name, role, or interest..." autocomplete="off">
-                        <button class="close-search" id="closeSearch">
-                            <span class="material-symbols-rounded">close</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="results-count" id="resultsCount"></div>
-            <div class="members-list" id="membersList"></div>
-
-            <footer class="app-footer">
-                <div class="footer-text">
-                    <span class="material-symbols-rounded">favorite</span>
-                    <span>Bhayo Group · United by bond</span>
-                    <span class="material-symbols-rounded">diversity_3</span>
-                </div>
-            </footer>
-        </div>
-
-        <div id="profileView" class="profile-view">
-            <div class="profile-header-edge">
-                <button class="back-button" id="backButton">
-                    <span class="material-symbols-rounded">arrow_back</span>
-                </button>
-                <h2 id="profileHeaderTitle">Profile</h2>
-                <div style="width: 44px;"></div>
-            </div>
-            <div id="profileDynamicContent"></div>
-        </div>
+<div class="app" id="home">
+  <header class="topbar" id="topbar">
+    <div class="wrap topbar-in">
+      <a class="brand" href="./" aria-label="Team Bhayo home">
+        <span class="brand-mark"><span class="icon">diversity_3</span></span>
+        <span>Bhayo Group</span>
+      </a>
+      <div class="tools">
+        <button class="icon-btn" id="searchBtn" aria-label="Search members"><span class="icon">search</span></button>
+        <button class="icon-btn" id="themeBtn" aria-label="Change theme"><span class="icon" id="themeIcon">brightness_auto</span></button>
+      </div>
     </div>
+  </header>
 
-    <script>
-        const familyMembers = [
-            { id: 1, name: "Majid", role: "Saljook.Editiz", image: "https://raw.githubusercontent.com/wized2/Bhayo/refs/heads/main/Majid.jpg", age: "24", birthday: "2002", occupation: "Useless", email: "km6483723@gmail.com", phone: "+923073476034", location: "Taj Garh, Rahim Yar Khan", bio: "Majid is a boy who use phone all day and watch movies and TikTok, work on a hotel at night.", hobbies: ["Cooking", "Browsing", "Scrolling"] },
-            { id: 2, name: "Ajmal Bhayo", role: "Khalifa Electric", image: "https://raw.githubusercontent.com/wized2/Bhayo/refs/heads/main/Ajmal.jpg", age: "20-25", birthday: "N/A", occupation: "Electric Engineer", email: "N/A", phone: "+92 341 3293399", location: "Taj Garh, Rahim Yar Khan", bio: "Ajmal is a disciplined young man who runs his own electrical shop. He is a master of electrical engineering.", hobbies: ["Work", "Scrolling", "TikTok"] },
-            { id: 3, name: "Mubeen Bhayo", role: "😎😎😎", image: "https://raw.githubusercontent.com/wized2/Bhayo/refs/heads/main/Mubeen.jpg", age: "20-25", birthday: "N/A", occupation: "Work", email: "N/A", phone: "+92 309 7469561", bio: "Mubeen is a strong boy, always busy in work, Majid's best friend", hobbies: ["Work", "Gaming", "Music"] },
-            { id: 4, name: "Rashid Bhayo", role: "Dark News", image: "https://raw.githubusercontent.com/wized2/Bhayo/refs/heads/main/Rashid.jpg", age: "18", birthday: "N/A", occupation: "Work", email: "mr55368d@gmail.com", phone: "+92 303 4774465", bio: "Rashid is a good boy, he is a good PUBG gammer", hobbies: ["Work", "Gaming", "PUBG", "Music"] },
-            { id: 5, name: "Umar Bhayo", role: "Gang", image: "https://raw.githubusercontent.com/wized2/Bhayo/refs/heads/main/Umar.jpg", age: "17-18", birthday: "N/A", occupation: "Work", email: "N/A", phone: "+92 321 4830928", bio: "Umar works at motorcycle repair shop, loves visiting places and watching movies", hobbies: ["Work", "Gaming", "Music", "PUBG", "Tourist"] }
-        ];
+  <main class="wrap">
+    <section class="hero">
+      <span class="eyebrow"><span class="icon">diversity_3</span>The circle · Est. 2025</span>
+      <h1>Team Bhayo</h1>
+      <p class="lede">Connected by spirit, driven by passion. Tap a profile to meet the person and see their photos.</p>
+      <div class="stats" id="stats"></div>
+      <div class="search" id="search">
+        <div class="search-bar" role="search">
+          <span class="icon" aria-hidden="true">search</span>
+          <label class="sr-only" for="searchInput">Search members</label>
+          <input id="searchInput" type="search" placeholder="Search by name, role or interest" autocomplete="off" enterkeyhint="search">
+          <button class="icon-btn" id="searchClose" aria-label="Close search" style="border:0;background:transparent"><span class="icon">close</span></button>
+        </div>
+      </div>
+    </section>
+    <div class="count" id="count" aria-live="polite"></div>
+    <div class="grid" id="grid"></div>
+  </main>
 
-        let currentSearchQuery = '';
+  <footer><span class="icon">favorite</span> Bhayo Group · United by bond</footer>
+</div>
 
-        function filterMembers() {
-            const query = currentSearchQuery.toLowerCase().trim();
-            if (!query) return familyMembers;
-            return familyMembers.filter(member => 
-                member.name.toLowerCase().includes(query) ||
-                member.role.toLowerCase().includes(query) ||
-                (member.bio && member.bio.toLowerCase().includes(query)) ||
-                (member.hobbies && member.hobbies.some(h => h.toLowerCase().includes(query)))
-            );
-        }
+<div class="profile" id="profile" role="dialog" aria-modal="true" aria-labelledby="pTitle" aria-hidden="true">
+  <div class="p-bar">
+    <button class="icon-btn" id="backBtn" aria-label="Back"><span class="icon">arrow_back</span></button>
+    <h2 id="pTitle">Profile</h2>
+  </div>
+  <div class="p-inner" id="pBody"></div>
+</div>
 
-        function renderMembersList() {
-            const container = document.getElementById('membersList');
-            const filtered = filterMembers();
-            const resultsCountSpan = document.getElementById('resultsCount');
-            
-            if (filtered.length === 0) {
-                resultsCountSpan.textContent = '';
-                container.innerHTML = `<div class="no-results"><span class="material-symbols-rounded" style="font-size: 3rem;">search_off</span><p style="margin-top: 12px;">No members found for "${currentSearchQuery}"</p></div>`;
-                return;
-            }
-            
-            resultsCountSpan.textContent = `${filtered.length} member${filtered.length !== 1 ? 's' : ''} found`;
-            container.innerHTML = '';
-            
-            filtered.forEach((member, index) => {
-                const row = document.createElement('div');
-                row.className = 'member-row';
-                row.style.animationDelay = `${index * 0.05}s`;
-                row.onclick = () => openProfileView(member);
-                const bioPreview = member.bio ? member.bio.substring(0, 65) + (member.bio.length > 65 ? '...' : '') : '';
-                row.innerHTML = `
-                    <div class="member-avatar"><img src="${member.image || 'https://via.placeholder.com/72?text=No+Photo'}" alt="${member.name}"></div>
-                    <div class="member-info">
-                        <div class="member-name">${member.name}<span class="member-role">${member.role || 'Member'}</span></div>
-                        ${bioPreview ? `<div class="member-bio-preview">${bioPreview}</div>` : ''}
-                    </div>
-                    <span class="material-symbols-rounded chevron-icon">chevron_right</span>
-                `;
-                container.appendChild(row);
-            });
-        }
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer" aria-hidden="true">
+  <div class="lb-top">
+    <div class="lb-meta"><div class="lb-title" id="lbTitle"></div><div class="lb-sub" id="lbSub"></div></div>
+    <div class="lb-btns">
+      <a class="lb-btn" id="lbOpen" href="#" target="_blank" rel="noopener" aria-label="Open original"><span class="icon">open_in_new</span></a>
+      <button class="lb-btn" id="lbClose" aria-label="Close viewer"><span class="icon">close</span></button>
+    </div>
+  </div>
+  <div class="lb-stage" id="lbStage">
+    <div class="lb-spin" aria-hidden="true"></div>
+    <img class="lb-img" id="lbImg" alt="">
+    <button class="lb-nav prev" id="lbPrev" aria-label="Previous photo"><span class="icon">chevron_left</span></button>
+    <button class="lb-nav next" id="lbNext" aria-label="Next photo"><span class="icon">chevron_right</span></button>
+  </div>
+  <div class="lb-dots" id="lbDots" aria-hidden="true"></div>
+</div>
 
-        function updateSearch(query) {
-            currentSearchQuery = query;
-            renderMembersList();
-        }
+<script>
+(function () {
+  'use strict';
 
-        const searchButton = document.getElementById('searchButton');
-        const expandedSearch = document.getElementById('expandedSearch');
-        const searchInput = document.getElementById('searchInput');
-        const closeSearch = document.getElementById('closeSearch');
-        
-        function openSearchBar() {
-            searchButton.style.display = 'none';
-            expandedSearch.classList.add('active');
-            setTimeout(() => searchInput.focus(), 100);
-        }
-        
-        function closeSearchBar() {
-            searchButton.style.display = 'flex';
-            expandedSearch.classList.remove('active');
-            searchInput.value = '';
-            updateSearch('');
-        }
-        
-        searchButton.addEventListener('click', openSearchBar);
-        closeSearch.addEventListener('click', closeSearchBar);
-        searchInput.addEventListener('input', (e) => updateSearch(e.target.value));
-        searchInput.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeSearchBar(); });
-        
-        document.addEventListener('click', (e) => {
-            if (expandedSearch.classList.contains('active') && !expandedSearch.contains(e.target) && e.target !== searchButton) {
-                closeSearchBar();
-            }
-        });
+  /* ------------------------------------------------------------------ data */
+  var MEMBERS = [
+    { id: 'majid', name: 'Majid', role: 'Saljook.Editiz', image: 'img/majid.jpg', age: '24', birthday: '2002', occupation: 'Useless', email: 'km6483723@gmail.com', phone: '+923073476034', location: 'Taj Garh, Rahim Yar Khan', bio: 'Majid is a boy who use phone all day and watch movies and TikTok, work on a hotel at night.', hobbies: ['Cooking', 'Browsing', 'Scrolling'],
+      gallery: [
+        { src: 'https://i.ibb.co/3nQ9P01/IMG-20260929-175235-361.jpg', page: 'https://ibb.co/3nQ9P01', file: 'IMG_20260929_175235_361.jpg' },
+        { src: 'https://i.ibb.co/cK7zN5Kp/IMG-20261014-164505-772.jpg', page: 'https://ibb.co/PsfB5psb', file: 'IMG_20261014_164505_772.jpg' },
+        { src: 'https://i.ibb.co/VKsxNJY/IMG-20261015-170852-626.jpg', page: 'https://ibb.co/VKsxNJY', file: 'IMG_20261015_170852_626.jpg' },
+        { src: 'https://i.ibb.co/BVNqzP30/IMG-20261019-170845-012.jpg', page: 'https://ibb.co/BVNqzP30', file: 'IMG_20261019_170845_012.jpg' },
+        { src: 'https://i.ibb.co/mCrHg8Fj/IMG-20261020-180531-756.jpg', page: 'https://ibb.co/mCrHg8Fj', file: 'IMG_20261020_180531_756.jpg' },
+        { src: 'https://i.ibb.co/PsrS5rx0/IMG-20261114-071033-085.jpg', page: 'https://ibb.co/PsrS5rx0', file: 'IMG_20261114_071033_085.jpg' }
+      ] },
+    { id: 'ajmal', name: 'Ajmal Bhayo', role: 'Khalifa Electric', image: 'img/ajmal.jpg', age: '20-25', birthday: 'N/A', occupation: 'Electric Engineer', email: 'N/A', phone: '+92 341 3293399', location: 'Taj Garh, Rahim Yar Khan', bio: 'Ajmal is a disciplined young man who runs his own electrical shop. He is a master of electrical engineering.', hobbies: ['Work', 'Scrolling', 'TikTok'], gallery: [] },
+    { id: 'mubeen', name: 'Mubeen Bhayo', role: '😎😎😎', image: 'img/mubeen.jpg', age: '20-25', birthday: 'N/A', occupation: 'Work', email: 'N/A', phone: '+92 309 7469561', bio: "Mubeen is a strong boy, always busy in work, Majid's best friend", hobbies: ['Work', 'Gaming', 'Music'],
+      gallery: [
+        { src: 'https://i.ibb.co/W4znssXw/IMG-20250402-WA0087.jpg', page: 'https://ibb.co/W4znssXw', file: 'IMG-20250402-WA0087.jpg' },
+        { src: 'https://i.ibb.co/Y4Tz74Dt/IMG-20240412-082536-913.jpg', page: 'https://ibb.co/Y4Tz74Dt', file: 'IMG_20240412_082536_913.jpg' },
+        { src: 'https://i.ibb.co/bg08bGn2/IMG-20250401-125407-322.jpg', page: 'https://ibb.co/bg08bGn2', file: 'IMG_20250401_125407_322.jpg' },
+        { src: 'https://i.ibb.co/8L6qh0CP/IMG-20250401-164116-382.jpg', page: 'https://ibb.co/FLg2PKr8', file: 'IMG_20250401_164116_382.jpg' },
+        { src: 'https://i.ibb.co/dszD52y7/IMG-20250607-211620-707-2.jpg', page: 'https://ibb.co/RGVcD0W7', file: 'IMG_20250607_211620_707~2.jpg' },
+        { src: 'https://i.ibb.co/B5SPX4x1/IMG-20260406-114625-226.jpg', page: 'https://ibb.co/LX2PLQWG', file: 'IMG_20260406_114625_226.jpg' }
+      ] },
+    { id: 'rashid', name: 'Rashid Bhayo', role: 'Dark News', image: 'img/rashid.jpg', age: '18', birthday: 'N/A', occupation: 'Work', email: 'mr55368d@gmail.com', phone: '+92 303 4774465', bio: 'Rashid is a good boy, he is a good PUBG gammer', hobbies: ['Work', 'Gaming', 'PUBG', 'Music'], gallery: [] },
+    { id: 'umar', name: 'Umar Bhayo', role: 'Gang', image: 'img/umar.jpg', age: '17-18', birthday: 'N/A', occupation: 'Work', email: 'N/A', phone: '+92 309 2801491', bio: 'Umar works at motorcycle repair shop, loves visiting places and watching movies', hobbies: ['Work', 'Gaming', 'Music', 'PUBG', 'Tourist'],
+      gallery: [
+        { src: 'https://i.ibb.co/GvkQNddK/IMG-20260321-WA0051.jpg', page: 'https://ibb.co/Lz6dH00L', file: 'IMG-20260321-WA0051.jpg' },
+        { src: 'https://i.ibb.co/YFQLxDdy/IMG-20260331-WA0001.jpg', page: 'https://ibb.co/KphrJNsL', file: 'IMG-20260331-WA0001.jpg' },
+        { src: 'https://i.ibb.co/gFrPZfyB/IMG-20250401-125338-611-2.jpg', page: 'https://ibb.co/gFrPZfyB', file: 'IMG_20250401_125338_611~2.jpg' },
+        { src: 'https://i.ibb.co/Xr3zz5Qn/IMG-20250401-171417-258.jpg', page: 'https://ibb.co/Xr3zz5Qn', file: 'IMG_20250401_171417_258.jpg' },
+        { src: 'https://i.ibb.co/5g4nrL9m/IMG-20250905-140644-362.jpg', page: 'https://ibb.co/5g4nrL9m', file: 'IMG_20250905_140644_362.jpg' },
+        { src: 'https://i.ibb.co/Gf35GC3S/IMG-20250905-140717-964.jpg', page: 'https://ibb.co/Gf35GC3S', file: 'IMG_20250905_140717_964.jpg' }
+      ] }
+  ];
 
-        function setTheme(theme) {
-            if (theme === 'system') {
-                document.documentElement.removeAttribute('data-theme');
-                localStorage.removeItem('theme');
-            } else {
-                document.documentElement.setAttribute('data-theme', theme);
-                localStorage.setItem('theme', theme);
-            }
-            updateThemeIcon();
-        }
-        
-        function getCurrentTheme() { return localStorage.getItem('theme') || 'system'; }
-        
-        function updateThemeIcon() {
-            const theme = getCurrentTheme();
-            const icon = document.getElementById('themeIcon');
-            if (theme === 'light') icon.textContent = 'light_mode';
-            else if (theme === 'dark') icon.textContent = 'dark_mode';
-            else icon.textContent = 'brightness_auto';
-        }
-        
-        function cycleTheme() {
-            const current = getCurrentTheme();
-            if (current === 'light') setTheme('dark');
-            else if (current === 'dark') setTheme('system');
-            else setTheme('light');
-        }
-        
-        document.getElementById('themeToggle').addEventListener('click', cycleTheme);
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-            if (getCurrentTheme() === 'system') updateThemeIcon();
-        });
-        
-        const saved = getCurrentTheme();
-        if (saved !== 'system') document.documentElement.setAttribute('data-theme', saved);
-        updateThemeIcon();
+  /* ---------------------------------------------------------------- helpers */
+  var $ = function (id) { return document.getElementById(id); };
+  var MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+  function has(v) { return v && v !== 'N/A'; }
+  function digits(s) { return String(s).replace(/\D/g, ''); }
+  function initial(n) { return esc(String(n).trim().charAt(0).toUpperCase()); }
+  function shotDate(file) {
+    var m = /(20\d{2})(\d{2})(\d{2})/.exec(file || '');
+    if (!m) return '';
+    var mo = +m[2], d = +m[3];
+    if (mo < 1 || mo > 12 || d < 1 || d > 31) return '';
+    return d + ' ' + MONTHS[mo - 1] + ' ' + m[1];
+  }
+  function firstName(m) { return m.name.split(' ')[0]; }
+  function photoCount() { return MEMBERS.reduce(function (n, m) { return n + m.gallery.length; }, 0); }
+  function byId(id) { for (var i = 0; i < MEMBERS.length; i++) if (MEMBERS[i].id === id) return MEMBERS[i]; return null; }
+  function store(k, v) { try { if (v == null) localStorage.removeItem(k); else localStorage.setItem(k, v); } catch (e) {} }
+  function load(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
 
-        function openProfileView(member) {
-            const profileView = document.getElementById('profileView');
-            document.getElementById('profileHeaderTitle').textContent = member.name;
-            const container = document.getElementById('profileDynamicContent');
-            
-            let infoTiles = '';
-            if (member.age) infoTiles += `<div class="info-tile"><span class="material-symbols-rounded">cake</span><div><div class="info-tile-label">Age</div><div>${member.age}</div></div></div>`;
-            if (member.occupation) infoTiles += `<div class="info-tile"><span class="material-symbols-rounded">work</span><div><div class="info-tile-label">Occupation</div><div>${member.occupation}</div></div></div>`;
-            if (member.email && member.email !== 'N/A') infoTiles += `<div class="info-tile"><span class="material-symbols-rounded">mail</span><div><div class="info-tile-label">Email</div><div>${member.email}</div></div></div>`;
-            if (member.phone && member.phone !== 'N/A') infoTiles += `<div class="info-tile"><span class="material-symbols-rounded">call</span><div><div class="info-tile-label">Phone</div><div>${member.phone}</div></div></div>`;
-            if (member.location) infoTiles += `<div class="info-tile"><span class="material-symbols-rounded">location_on</span><div><div class="info-tile-label">Location</div><div>${member.location}</div></div></div>`;
-            if (member.birthday && member.birthday !== 'N/A') infoTiles += `<div class="info-tile"><span class="material-symbols-rounded">celebration</span><div><div class="info-tile-label">Birthday</div><div>${member.birthday}</div></div></div>`;
-            
-            container.innerHTML = `
-                <div class="profile-hero">
-                    <div class="profile-hero-avatar"><img src="${member.image || 'https://via.placeholder.com/140'}" alt="${member.name}"></div>
-                    <h3>${member.name}</h3>
-                    <div class="member-role" style="margin-top: 8px;">${member.role || 'Team Member'}</div>
-                </div>
-                <div class="info-grid-expressive">${infoTiles || '<div class="info-tile"><span class="material-symbols-rounded">info</span><div>No additional info available</div></div>'}</div>
-                ${member.bio ? `<div class="bio-expanded-full">${member.bio}</div>` : ''}
-                ${member.hobbies && member.hobbies.length ? `<div class="hobbies-container">${member.hobbies.map(h => `<span class="hobby-badge">${h}</span>`).join('')}</div>` : ''}
-            `;
-            profileView.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-        
-        function closeProfileView() {
-            document.getElementById('profileView').classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-        
-        document.getElementById('backButton').addEventListener('click', closeProfileView);
-        document.getElementById('profileView').addEventListener('click', (e) => { if (e.target.id === 'profileView') closeProfileView(); });
-        document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && document.getElementById('profileView').classList.contains('active')) closeProfileView(); });
-        
-        renderMembersList();
-    </script>
+  /* ------------------------------------------------------------------- home */
+  var query = '';
+  function filtered() {
+    var q = query.toLowerCase().trim();
+    if (!q) return MEMBERS;
+    return MEMBERS.filter(function (m) {
+      return [m.name, m.role, m.bio, m.occupation, m.location].concat(m.hobbies).join(' ').toLowerCase().indexOf(q) !== -1;
+    });
+  }
+
+  function renderStats() {
+    $('stats').innerHTML =
+      '<span class="stat"><span class="icon">groups</span><b>' + MEMBERS.length + '</b> members</span>' +
+      '<span class="stat"><span class="icon">photo_library</span><b>' + photoCount() + '</b> photos</span>' +
+      '<span class="stat"><span class="icon">location_on</span>Rahim Yar Khan</span>';
+  }
+
+  function renderGrid() {
+    var list = filtered(), grid = $('grid');
+    $('count').textContent = list.length ? (query ? list.length + ' of ' + MEMBERS.length + ' members' : '') : '';
+    if (!list.length) {
+      grid.innerHTML = '<div class="empty"><span class="icon">search_off</span>No members match “' + esc(query) + '”</div>';
+      return;
+    }
+    grid.innerHTML = list.map(function (m, i) {
+      var bio = m.bio ? esc(m.bio) : '';
+      return '<button class="card" data-id="' + m.id + '" style="animation-delay:' + (i * 60) + 'ms" aria-label="Open ' + esc(m.name) + ' profile">' +
+        '<span class="avatar"><img src="' + esc(m.image) + '" alt="" loading="lazy" decoding="async" onerror="this.replaceWith(document.createTextNode(\'' + initial(m.name) + '\'))"></span>' +
+        '<span class="card-body"><span class="card-name">' + esc(m.name) + '</span><br>' +
+        '<span class="role">' + esc(m.role || 'Member') + '</span>' +
+        (bio ? '<span class="card-bio" style="display:-webkit-box">' + bio + '</span>' : '') + '</span>' +
+        '<span class="card-end">' + (m.gallery.length ? '<span class="photo-pill"><span class="icon">photo_library</span>' + m.gallery.length + '</span>' : '') +
+        '<span class="icon">chevron_right</span></span></button>';
+    }).join('');
+  }
+
+  $('grid').addEventListener('click', function (e) {
+    var b = e.target.closest('.card');
+    if (b) openProfile(b.getAttribute('data-id'), true);
+  });
+
+  /* search */
+  function openSearch() { $('search').classList.add('open'); $('searchBtn').style.display = 'none'; setTimeout(function () { $('searchInput').focus(); }, 60); }
+  function closeSearch() { $('search').classList.remove('open'); $('searchBtn').style.display = ''; $('searchInput').value = ''; query = ''; renderGrid(); }
+  $('searchBtn').addEventListener('click', openSearch);
+  $('searchClose').addEventListener('click', closeSearch);
+  $('searchInput').addEventListener('input', function (e) { query = e.target.value; renderGrid(); });
+  $('searchInput').addEventListener('keydown', function (e) { if (e.key === 'Escape') closeSearch(); });
+
+  /* topbar shadow */
+  window.addEventListener('scroll', function () { $('topbar').classList.toggle('scrolled', window.scrollY > 8); }, { passive: true });
+
+  /* theme: light -> dark -> system */
+  function applyTheme(t) {
+    var r = document.documentElement;
+    if (t === 'light' || t === 'dark') r.setAttribute('data-theme', t); else r.removeAttribute('data-theme');
+    store('theme', t === 'light' || t === 'dark' ? t : null);
+    $('themeIcon').textContent = t === 'light' ? 'light_mode' : t === 'dark' ? 'dark_mode' : 'brightness_auto';
+    $('themeBtn').setAttribute('aria-label', 'Theme: ' + (t === 'light' || t === 'dark' ? t : 'system') + '. Tap to change');
+  }
+  function theme() { var t = load('theme'); return t === 'light' || t === 'dark' ? t : 'system'; }
+  $('themeBtn').addEventListener('click', function () { var t = theme(); applyTheme(t === 'light' ? 'dark' : t === 'dark' ? 'system' : 'light'); });
+  applyTheme(theme());
+
+  /* ---------------------------------------------------------------- profile */
+  var current = null;
+  var lastFocus = null;
+
+  function tile(icon, label, value, href) {
+    var v = href ? '<a href="' + esc(href) + '" class="tile-v">' + esc(value) + '</a>' : '<div class="tile-v">' + esc(value) + '</div>';
+    return '<div class="tile"><span class="icon" aria-hidden="true">' + icon + '</span><div style="min-width:0"><div class="tile-l">' + label + '</div>' + v + '</div></div>';
+  }
+
+  function renderProfile(m) {
+    var tiles = '';
+    if (has(m.age)) tiles += tile('cake', 'Age', m.age);
+    if (has(m.occupation)) tiles += tile('work', 'Occupation', m.occupation);
+    if (has(m.phone)) tiles += tile('call', 'Phone', m.phone, 'tel:+' + digits(m.phone));
+    if (has(m.email)) tiles += tile('mail', 'Email', m.email, 'mailto:' + m.email);
+    if (has(m.location)) tiles += tile('location_on', 'Location', m.location);
+    if (has(m.birthday)) tiles += tile('celebration', 'Born', m.birthday);
+
+    var acts = '';
+    if (has(m.phone)) {
+      acts += '<a class="act main" href="tel:+' + digits(m.phone) + '"><span class="icon">call</span>Call</a>';
+      acts += '<a class="act" href="https://wa.me/' + digits(m.phone) + '" target="_blank" rel="noopener"><span class="icon">chat</span>WhatsApp</a>';
+    }
+    if (has(m.email)) acts += '<a class="act" href="mailto:' + esc(m.email) + '"><span class="icon">mail</span>Email</a>';
+
+    var gal;
+    if (m.gallery.length) {
+      gal = '<div class="gallery" id="gallery">' + m.gallery.map(function (g, i) {
+        var d = shotDate(g.file);
+        return '<button class="shot loading" data-i="' + i + '" style="animation-delay:' + Math.min(i, 8) * 50 + 'ms" aria-label="Open photo ' + (i + 1) + ' of ' + m.gallery.length + (d ? ', ' + d : '') + '">' +
+          '<img src="' + esc(g.src) + '" alt="' + esc(firstName(m)) + (d ? ', ' + d : ', photo ' + (i + 1)) + '" loading="lazy" decoding="async" referrerpolicy="no-referrer">' +
+          (d ? '<span class="cap">' + d + '</span>' : '') + '</button>';
+      }).join('') + '</div>';
+    } else {
+      gal = '<div class="gal-empty">No photos added yet.</div>';
+    }
+
+    $('pTitle').textContent = m.name;
+    $('pBody').innerHTML =
+      '<div class="p-hero" style="--cover:url(\'' + esc(m.image) + '\')">' +
+        '<div class="p-photo"><img src="' + esc(m.image) + '" alt="' + esc(m.name) + '" onerror="this.replaceWith(document.createTextNode(\'' + initial(m.name) + '\'))"></div>' +
+        '<h3>' + esc(m.name) + '</h3><span class="role">' + esc(m.role || 'Team member') + '</span>' +
+        (acts ? '<div class="actions">' + acts + '</div>' : '') + '</div>' +
+      (m.bio ? '<section class="section"><div class="section-h"><h4><span class="icon">person</span>About</h4></div><div class="bio">' + esc(m.bio) + '</div></section>' : '') +
+      (tiles ? '<section class="section"><div class="section-h"><h4><span class="icon">badge</span>Details</h4></div><div class="tiles">' + tiles + '</div></section>' : '') +
+      (m.hobbies.length ? '<section class="section"><div class="section-h"><h4><span class="icon">interests</span>Interests</h4></div><div class="chips">' + m.hobbies.map(function (h) { return '<span class="chip">' + esc(h) + '</span>'; }).join('') + '</div></section>' : '') +
+      '<section class="section"><div class="section-h"><h4><span class="icon">photo_library</span>Gallery</h4>' + (m.gallery.length ? '<span class="n">' + m.gallery.length + ' photos</span>' : '') + '</div>' + gal + '</section>';
+
+    /* shimmer until each photo is in, then reveal at its natural shape */
+    var shots = $('pBody').querySelectorAll('.shot');
+    Array.prototype.forEach.call(shots, function (s) {
+      var img = s.querySelector('img');
+      function ok() { s.classList.remove('loading'); s.classList.add('ready'); }
+      function bad() { s.classList.remove('loading'); s.classList.add('failed'); s.insertAdjacentHTML('beforeend', '<span>Photo unavailable</span>'); }
+      if (img.complete && img.naturalWidth) ok(); else if (img.complete) bad();
+      else { img.addEventListener('load', ok, { once: true }); img.addEventListener('error', bad, { once: true }); }
+    });
+  }
+
+  function openProfile(id, push) {
+    var m = byId(id);
+    if (!m) return;
+    current = m;
+    lastFocus = document.activeElement;
+    renderProfile(m);
+    var p = $('profile');
+    p.scrollTop = 0;
+    p.classList.add('open');
+    p.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('no-scroll');
+    if (push) { try { history.pushState({ p: id }, '', '#' + id); } catch (e) {} }
+    setTimeout(function () { $('backBtn').focus({ preventScroll: true }); }, 60);
+  }
+
+  function hideProfile() {
+    $('profile').classList.remove('open');
+    $('profile').setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('no-scroll');
+    current = null;
+    if (lastFocus && lastFocus.focus) { try { lastFocus.focus({ preventScroll: true }); } catch (e) {} }
+  }
+
+  function closeProfile() {
+    if (history.state && history.state.p) history.back(); else { hideProfile(); try { history.replaceState(null, '', location.pathname + location.search); } catch (e) {} }
+  }
+
+  $('backBtn').addEventListener('click', closeProfile);
+  window.addEventListener('popstate', function () {
+    if (lb.open) closeLb(true);
+    var id = (location.hash || '').replace('#', '');
+    if (id && byId(id)) { if (!current || current.id !== id) openProfile(id, false); } else if (current) hideProfile();
+  });
+
+  $('pBody').addEventListener('click', function (e) {
+    var s = e.target.closest('.shot');
+    if (s && current) openLb(current, +s.getAttribute('data-i'));
+  });
+
+  /* --------------------------------------------------------------- lightbox */
+  var lb = { open: false, m: null, i: 0, x0: 0, y0: 0, tracking: false };
+  var imgEl = $('lbImg');
+
+  function dots() {
+    $('lbDots').innerHTML = lb.m.gallery.map(function (_, i) { return '<span class="lb-dot' + (i === lb.i ? ' on' : '') + '"></span>'; }).join('');
+  }
+  function preload(i) {
+    var g = lb.m.gallery[(i + lb.m.gallery.length) % lb.m.gallery.length];
+    if (g) { var im = new Image(); im.referrerPolicy = 'no-referrer'; im.src = g.src; }
+  }
+  function show(i, dir) {
+    var n = lb.m.gallery.length;
+    lb.i = (i + n) % n;
+    var g = lb.m.gallery[lb.i], d = shotDate(g.file);
+    var root = $('lb');
+    root.classList.add('busy');
+    imgEl.classList.add('swap');
+    var token = {};
+    show.token = token;
+    var tmp = new Image();
+    tmp.referrerPolicy = 'no-referrer';
+    function done() {
+      if (show.token !== token) return;
+      imgEl.src = g.src;
+      imgEl.alt = firstName(lb.m) + (d ? ', ' + d : ', photo ' + (lb.i + 1));
+      requestAnimationFrame(function () { imgEl.classList.remove('swap'); root.classList.remove('busy'); });
+    }
+    tmp.onload = done; tmp.onerror = done;
+    tmp.src = g.src;
+    $('lbTitle').textContent = lb.m.name;
+    $('lbSub').textContent = (lb.i + 1) + ' / ' + n + (d ? '  ·  ' + d : '');
+    $('lbOpen').href = g.page || g.src;
+    $('lbPrev').hidden = $('lbNext').hidden = n < 2;
+    dots();
+    if (n > 1) { preload(lb.i + 1); preload(lb.i - 1); }
+  }
+  function openLb(m, i) {
+    lb.open = true; lb.m = m;
+    var root = $('lb');
+    root.classList.add('open'); root.setAttribute('aria-hidden', 'false');
+    show(i);
+    $('lbClose').focus({ preventScroll: true });
+  }
+  function closeLb() {
+    lb.open = false;
+    $('lb').classList.remove('open'); $('lb').setAttribute('aria-hidden', 'true');
+    imgEl.removeAttribute('src');
+    show.token = null;
+  }
+  $('lbClose').addEventListener('click', closeLb);
+  $('lbPrev').addEventListener('click', function (e) { e.stopPropagation(); show(lb.i - 1); });
+  $('lbNext').addEventListener('click', function (e) { e.stopPropagation(); show(lb.i + 1); });
+  $('lbStage').addEventListener('click', function (e) { if (e.target === $('lbStage')) closeLb(); });
+
+  /* swipe: left/right to browse, down to close */
+  var stage = $('lbStage');
+  stage.addEventListener('touchstart', function (e) { if (e.touches.length !== 1) { lb.tracking = false; return; } lb.tracking = true; lb.x0 = e.touches[0].clientX; lb.y0 = e.touches[0].clientY; }, { passive: true });
+  stage.addEventListener('touchend', function (e) {
+    if (!lb.tracking) return;
+    lb.tracking = false;
+    var t = e.changedTouches[0], dx = t.clientX - lb.x0, dy = t.clientY - lb.y0;
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.4) show(lb.i + (dx < 0 ? 1 : -1));
+    else if (dy > 90 && Math.abs(dy) > Math.abs(dx) * 1.4) closeLb();
+  }, { passive: true });
+
+  document.addEventListener('keydown', function (e) {
+    if (lb.open) {
+      if (e.key === 'Escape') closeLb();
+      else if (e.key === 'ArrowRight') show(lb.i + 1);
+      else if (e.key === 'ArrowLeft') show(lb.i - 1);
+      else if (e.key === 'Tab') { var f = $('lb').querySelectorAll('button:not([hidden]), a[href]'); if (f.length) { var first = f[0], last = f[f.length - 1]; if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); } else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); } } }
+      return;
+    }
+    if (e.key === 'Escape' && current) closeProfile();
+  });
+
+  /* show icon glyphs only once the icon font is in (no stray ligature words) */
+  try {
+    var ready = function () { document.documentElement.classList.add('icons-ready'); };
+    if (document.fonts && document.fonts.load) document.fonts.load('24px "Material Symbols Rounded"', 'search').then(function (f) { if (f && f.length) ready(); });
+  } catch (e) {}
+
+  /* ------------------------------------------------------------------ start */
+  renderStats();
+  renderGrid();
+  var start = (location.hash || '').replace('#', '');
+  if (start && byId(start)) openProfile(start, false);
+})();
+</script>
 </body>
 </html>
